@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dial A Drink — Driver · Active delivery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <div class="stage">
+    <div class="phone">
+      <div class="phone__notch"></div>
+      <div class="phone__screen">
+
+        <div class="statusbar">
+          <span>9:41</span>
+          <span class="statusbar__icons"><span>📶</span><span>🔋</span></span>
+        </div>
+
+        <!-- MAP -->
+        <div class="drvact-map">
+          <a href="job.html" class="tk-map__back">‹</a>
+          <svg class="tk-streets" viewBox="0 0 390 260" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;">
+            <rect width="390" height="260" fill="#e9e1d0"/>
+            <g stroke="#dcd2bd" stroke-width="10">
+              <line x1="0" y1="80" x2="390" y2="80"/>
+              <line x1="0" y1="170" x2="390" y2="170"/>
+              <line x1="120" y1="0" x2="120" y2="260"/>
+              <line x1="270" y1="0" x2="270" y2="260"/>
+            </g>
+            <path d="M120 210 L120 80 L270 80" fill="none" stroke="#A87E1E" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 12"/>
+          </svg>
+          <div class="tk-pin tk-pin--store" style="position:absolute;left:120px;top:210px;transform:translate(-50%,-50%);font-size:1.4rem;">🛵</div>
+          <div class="tk-pin tk-pin--home" style="position:absolute;left:270px;top:80px;transform:translate(-50%,-50%);font-size:1.6rem;">📍</div>
+        </div>
+
+        <!-- ACTIVE DELIVERY CARD -->
+        <div class="drvact-card">
+          <span class="drvact-step">🛵 On the way to customer</span>
+
+          <div class="drvact-addr">
+            <span class="drvact-addr__icon">📍</span>
+            <div>
+              <strong>12 Samora Machel Ave</strong>
+              <span>Belgravia, Harare · 2.1 km · ~8 min</span>
+            </div>
+          </div>
+
+          <div class="drvact-cust">
+            <div class="drvact-cust__av">T</div>
+            <div class="drvact-cust__body">
+              <strong>Tapiwa Moyo</strong>
+              <span>#DAD-2048 · gate code #4821</span>
+            </div>
+            <a href="tel:+263" class="drvact-cust__call">📞</a>
+          </div>
+
+          <!-- cash to handle -->
+          <div class="drvact-cash">
+            <div class="drvact-cash__title">💵 Cash on delivery</div>
+            <div class="drvact-cash__row"><span>Collect from customer</span><strong>$59.00</strong></div>
+            <div class="drvact-cash__row"><span>Bring change</span><strong>$6.50</strong></div>
+            <div class="drvact-cash__row"><span>Store credit applied</span><span>$4.50</span></div>
+          </div>
+
+          <div class="drvact-actions">
+            <a href="job.html" class="btn btn--gold btn--lg">Mark as delivered</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
