@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dial A Drink — Account</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <div class="stage">
+    <div class="phone">
+      <div class="phone__notch"></div>
+      <div class="phone__screen">
+
+        <div class="statusbar">
+          <span>9:41</span>
+          <span class="statusbar__icons"><span>📶</span><span>🔋</span></span>
+        </div>
+
+        <header class="appbar">
+          <a href="home.html" class="appbar__back">‹</a>
+          <span class="appbar__title">Account</span>
+        </header>
+
+        <div class="screen">
+
+          <!-- profile header -->
+          <div class="acc-profile">
+            <div class="acc-profile__avatar">T</div>
+            <div class="acc-profile__info">
+              <strong>Tapiwa Moyo</strong>
+              <span>+263 77 234 9910</span>
+              <span>tapiwa.moyo@gmail.com</span>
+            </div>
+            <button class="acc-profile__edit">Edit</button>
+          </div>
+
+          <!-- quick stats -->
+          <div class="acc-stats">
+            <a href="orders.html" class="acc-stat">
+              <span class="acc-stat__num">24</span>
+              <span class="acc-stat__label">Orders</span>
+            </a>
+            <a href="credit.html" class="acc-stat">
+              <span class="acc-stat__num">$4.50</span>
+              <span class="acc-stat__label">Credit</span>
+            </a>
+            <a href="account-addresses.html" class="acc-stat">
+              <span class="acc-stat__num">2</span>
+              <span class="acc-stat__label">Addresses</span>
+            </a>
+          </div>
+
+          <!-- menu -->
+          <div class="acc-group">
+            <div class="section-label">Ordering</div>
+            <a href="orders.html" class="acc-row">
+              <span class="acc-row__icon">🧾</span>
+              <span class="acc-row__label">Order history</span>
+              <span class="acc-row__go">›</span>
+            </a>
+            <a href="account-addresses.html" class="acc-row">
+              <span class="acc-row__icon">📍</span>
+              <span class="acc-row__label">Saved addresses</span>
+              <span class="acc-row__go">›</span>
+            </a>
+            <a href="account-payment.html" class="acc-row">
+              <span class="acc-row__icon">💳</span>
+              <span class="acc-row__label">Payment methods</span>
+              <span class="acc-row__go">›</span>
+            </a>
+            <a href="credit.html" class="acc-row">
+              <span class="acc-row__icon">🎁</span>
+              <span class="acc-row__label">Store credit</span>
+              <span class="acc-row__meta">$4.50</span>
+              <span class="acc-row__go">›</span>
+            </a>
+          </div>
+
+          <div class="acc-group">
+            <div class="section-label">Preferences</div>
+            <a href="#" class="acc-row">
+              <span class="acc-row__icon">🔔</span>
+              <span class="acc-row__label">Notifications</span>
+              <span class="acc-row__go">›</span>
+            </a>
+            <a href="#" class="acc-row">
+              <span class="acc-row__icon">🌐</span>
+              <span class="acc-row__label">Language</span>
+              <span class="acc-row__meta">English</span>
+              <span class="acc-row__go">›</span>
+            </a>
+          </div>
+
+          <div class="acc-group">
+            <div class="section-label">Support</div>
+            <a href="account-help.html" class="acc-row">
+              <span class="acc-row__icon">❓</span>
+              <span class="acc-row__label">Help &amp; support</span>
+              <span class="acc-row__go">›</span>
+            </a>
+            <a href="#" class="acc-row">
+              <span class="acc-row__icon">📄</span>
+              <span class="acc-row__label">Terms &amp; privacy</span>
+              <span class="acc-row__go">›</span>
+            </a>
+          </div>
+
+          <div class="acc-group">
+            <a href="../index.html" class="acc-row acc-row--signout">
+              <span class="acc-row__icon">↩︎</span>
+              <span class="acc-row__label">Sign out</span>
+            </a>
+          </div>
+
+          <div class="acc-foot">
+            <span>Dial A Drink Zimbabwe</span>
+            <span>v1.0 · Prototype</span>
+            <span class="acc-foot__age">Not for sale to persons under 18. Drink responsibly.</span>
+          </div>
+
+          <div style="height:16px;"></div>
+        </div>
+
+        <nav class="tabbar">
+          <a href="home.html"><span class="ico">🏠</span>Home</a>
+          <a href="catalogue.html"><span class="ico">🍾</span>Shop</a>
+          <a href="orders.html"><span class="ico">🧾</span>Orders</a>
+          <a href="credit.html"><span class="ico">💳</span>Credit</a>
+          <a href="account.html" class="is-active"><span class="ico">👤</span>Account</a>
+        </nav>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
