@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dial A Drink — Tracking</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <div class="stage">
+    <div class="phone">
+      <div class="phone__notch"></div>
+      <div class="phone__screen">
+
+        <div class="statusbar">
+          <span>9:41</span>
+          <span class="statusbar__icons"><span>📶</span><span>🔋</span></span>
+        </div>
+
+        <!-- MAP -->
+        <div class="tk-map">
+          <a href="home.html" class="tk-map__back">‹</a>
+
+          <!-- decorative streets -->
+          <svg class="tk-streets" viewBox="0 0 390 420" preserveAspectRatio="xMidYMid slice">
+            <rect width="390" height="420" fill="#e9e1d0"/>
+            <g stroke="#dcd2bd" stroke-width="10">
+              <line x1="0" y1="90" x2="390" y2="90"/>
+              <line x1="0" y1="210" x2="390" y2="210"/>
+              <line x1="0" y1="330" x2="390" y2="330"/>
+              <line x1="80" y1="0" x2="80" y2="420"/>
+              <line x1="220" y1="0" x2="220" y2="420"/>
+              <line x1="320" y1="0" x2="320" y2="420"/>
+            </g>
+            <g stroke="#efe8d8" stroke-width="4">
+              <line x1="0" y1="150" x2="390" y2="150"/>
+              <line x1="0" y1="270" x2="390" y2="270"/>
+              <line x1="150" y1="0" x2="150" y2="420"/>
+            </g>
+            <!-- route -->
+            <path d="M80 330 L80 210 L220 210 L220 90" fill="none" stroke="#A87E1E" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 12"/>
+          </svg>
+
+          <!-- store pin (origin) -->
+          <div class="tk-pin tk-pin--store" style="left:80px; top:330px;">🏪</div>
+          <!-- driver marker (moving) -->
+          <div class="tk-driver" style="left:220px; top:210px;">
+            <span class="tk-driver__pulse"></span>🛵
+          </div>
+          <!-- home pin (destination) -->
+          <div class="tk-pin tk-pin--home" style="left:220px; top:90px;">📍</div>
+        </div>
+
+        <!-- TRACKING CARD -->
+        <div class="tk-card">
+          <div class="tk-eta">
+            <div>
+              <span class="tk-eta__num">12</span>
+              <span class="tk-eta__label">minutes away</span>
+            </div>
+            <span class="pill pill--gold"><span class="pill__dot"></span>On the way</span>
+          </div>
+
+          <!-- status steps -->
+          <ol class="tk-steps">
+            <li class="done">
+              <span class="tk-steps__dot">✓</span>
+              <span class="tk-steps__label">Order confirmed</span>
+              <span class="tk-steps__time">13:02</span>
+            </li>
+            <li class="done">
+              <span class="tk-steps__dot">✓</span>
+              <span class="tk-steps__label">Driver assigned</span>
+              <span class="tk-steps__time">13:06</span>
+            </li>
+            <li class="current">
+              <span class="tk-steps__dot"></span>
+              <span class="tk-steps__label">On the way</span>
+              <span class="tk-steps__time">13:14</span>
+            </li>
+            <li>
+              <span class="tk-steps__dot"></span>
+              <span class="tk-steps__label">Delivered</span>
+              <span class="tk-steps__time">—</span>
+            </li>
+          </ol>
+
+          <!-- driver -->
+          <div class="tk-driver-row">
+            <div class="tk-avatar">T</div>
+            <div class="tk-driver-info">
+              <strong>Tapiwa Moyo</strong>
+              <span>Honda Ace · AEK 4821</span>
+            </div>
+            <a href="tel:+263" class="tk-call">📞</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>

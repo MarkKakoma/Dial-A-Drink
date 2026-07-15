@@ -549,6 +549,69 @@ ul, ol { list-style: none; }
 .co-line--total { border-top: 1px solid var(--line); padding-top: 12px; margin-top: 4px; }
 .co-line--total span { font-family: var(--font-display); font-weight: 600; font-size: 1.2rem; color: var(--brown); }
 
+/* ---------- 7f. LIVE TRACKING ---------- */
+.tk-map { position: relative; flex: 1; overflow: hidden; }
+.tk-streets { position: absolute; inset: 0; width: 100%; height: 100%; }
+.tk-map__back {
+  position: absolute; top: 12px; left: 12px; z-index: 5;
+  width: 38px; height: 38px; border-radius: 50%;
+  background: var(--white); box-shadow: var(--shadow-sm);
+  display: grid; place-items: center; font-size: 1.4rem; color: var(--brown);
+}
+.tk-pin, .tk-driver { position: absolute; transform: translate(-50%,-50%); font-size: 1.6rem; }
+.tk-pin--store { font-size: 1.5rem; }
+.tk-pin--home  { font-size: 1.8rem; }
+.tk-driver { font-size: 1.9rem; z-index: 4; }
+.tk-driver__pulse {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(168,126,30,.25);
+  animation: tkpulse 2s ease-out infinite;
+}
+@keyframes tkpulse { 0%{transform:translate(-50%,-50%) scale(.5);opacity:.8;} 100%{transform:translate(-50%,-50%) scale(1.5);opacity:0;} }
+
+.tk-card {
+  flex: none; background: var(--white);
+  border-radius: 24px 24px 34px 34px;
+  margin-top: -22px; position: relative; z-index: 6;
+  padding: 22px 20px calc(20px + env(safe-area-inset-bottom));
+  box-shadow: 0 -10px 30px -12px rgba(90,36,16,.2);
+}
+.tk-eta { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+.tk-eta__num { font-family: var(--font-display); font-weight: 600; font-size: 2.4rem; color: var(--brown); }
+.tk-eta__label { font-size: .9rem; color: var(--muted); margin-left: 6px; }
+
+.tk-steps { position: relative; margin-bottom: 20px; }
+.tk-steps li { display: flex; align-items: center; gap: 12px; padding: 7px 0; position: relative; }
+.tk-steps__dot {
+  width: 22px; height: 22px; border-radius: 50%; flex: none;
+  border: 2px solid var(--line); background: var(--white);
+  display: grid; place-items: center; font-size: .7rem; color: #fff;
+  z-index: 2;
+}
+/* connector line */
+.tk-steps li::before {
+  content: ""; position: absolute; left: 10px; top: 22px; bottom: -7px;
+  width: 2px; background: var(--line);
+}
+.tk-steps li:last-child::before { display: none; }
+.tk-steps__label { flex: 1; font-size: .92rem; color: var(--muted); }
+.tk-steps__time { font-size: .78rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+.tk-steps li.done .tk-steps__dot { background: var(--gold); border-color: var(--gold); }
+.tk-steps li.done .tk-steps__label { color: var(--ink); }
+.tk-steps li.done::before { background: var(--gold); }
+.tk-steps li.current .tk-steps__dot { border-color: var(--gold); box-shadow: 0 0 0 4px var(--warn-bg); }
+.tk-steps li.current .tk-steps__dot::after { content:""; width:8px; height:8px; border-radius:50%; background:var(--gold); }
+.tk-steps li.current .tk-steps__label { color: var(--brown); font-weight: 600; }
+
+.tk-driver-row { display: flex; align-items: center; gap: 12px; border-top: 1px solid var(--line); padding-top: 16px; }
+.tk-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--brown); color: var(--cream); display: grid; place-items: center; font-weight: 600; font-size: 1.1rem; }
+.tk-driver-info { flex: 1; display: flex; flex-direction: column; }
+.tk-driver-info strong { font-size: .95rem; }
+.tk-driver-info span { font-size: .82rem; color: var(--muted); }
+.tk-call { width: 46px; height: 46px; border-radius: 50%; background: var(--ok-bg); display: grid; place-items: center; font-size: 1.2rem; }
+
 /* ---------- 9. UTILITIES & RESPONSIVE ---------- */
 .pad   { padding: 18px; }
 .stack { display: flex; flex-direction: column; }
