@@ -612,6 +612,27 @@ ul, ol { list-style: none; }
 .tk-driver-info span { font-size: .82rem; color: var(--muted); }
 .tk-call { width: 46px; height: 46px; border-radius: 50%; background: var(--ok-bg); display: grid; place-items: center; font-size: 1.2rem; }
 
+/* ---------- 7g. ORDERS HISTORY ---------- */
+.ord-card {
+  display: block; margin: 0 18px 12px;
+  background: var(--white); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 14px 16px; transition: .15s;
+}
+.ord-card:hover { border-color: var(--gold); box-shadow: var(--shadow-sm); }
+.ord-card--active { border-color: #eaddc0; background: var(--warn-bg); }
+.ord-card__top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+.ord-card__id { font-weight: 600; font-size: .88rem; color: var(--brown); }
+.ord-card__items { font-size: .85rem; color: var(--muted); line-height: 1.4; margin-bottom: 10px; }
+.ord-card__foot { display: flex; align-items: center; justify-content: space-between; }
+.ord-card__meta { font-size: .8rem; color: var(--muted); }
+.ord-card__total { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; color: var(--brown); }
+.ord-card__track {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 12px; padding-top: 12px; border-top: 1px solid #eaddc0;
+}
+.ord-card__eta { font-size: .82rem; font-weight: 600; color: var(--brown); }
+.ord-card__go { font-size: .85rem; font-weight: 700; color: var(--gold); }
+
 /* ---------- 9. UTILITIES & RESPONSIVE ---------- */
 .pad   { padding: 18px; }
 .stack { display: flex; flex-direction: column; }

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dial A Drink — Orders</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <div class="stage">
+    <div class="phone">
+      <div class="phone__notch"></div>
+      <div class="phone__screen">
+
+        <div class="statusbar">
+          <span>9:41</span>
+          <span class="statusbar__icons"><span>📶</span><span>🔋</span></span>
+        </div>
+
+        <header class="appbar">
+          <a href="home.html" class="appbar__back">‹</a>
+          <span class="appbar__title">Your orders</span>
+        </header>
+
+        <div class="screen">
+
+          <!-- ACTIVE -->
+          <div class="section-label">Active</div>
+          <a href="tracking.html" class="ord-card ord-card--active">
+            <div class="ord-card__top">
+              <span class="ord-card__id">Order #DAD-2048</span>
+              <span class="pill pill--gold"><span class="pill__dot"></span>On the way</span>
+            </div>
+            <div class="ord-card__items">Jameson Irish Whisky · Castle Lager ×6 · Amarula 1L</div>
+            <div class="ord-card__foot">
+              <span class="ord-card__meta">Today · 13:02</span>
+              <span class="ord-card__total">$63.50</span>
+            </div>
+            <div class="ord-card__track">
+              <span class="ord-card__eta">🛵 Arriving in about 12 min</span>
+              <span class="ord-card__go">Track ›</span>
+            </div>
+          </a>
+
+          <!-- PAST -->
+          <div class="section-label">Past orders</div>
+
+          <a href="order-detail.html" class="ord-card">
+            <div class="ord-card__top">
+              <span class="ord-card__id">Order #DAD-2041</span>
+              <span class="pill pill--ok"><span class="pill__dot"></span>Delivered</span>
+            </div>
+            <div class="ord-card__items">Two Oceans Sauvignon Blanc · Hunters Dry ×4</div>
+            <div class="ord-card__foot">
+              <span class="ord-card__meta">14 Jul · 18:24</span>
+              <span class="ord-card__total">$20.00</span>
+            </div>
+          </a>
+
+          <a href="order-detail.html" class="ord-card">
+            <div class="ord-card__top">
+              <span class="ord-card__id">Order #DAD-2033</span>
+              <span class="pill pill--ok"><span class="pill__dot"></span>Delivered</span>
+            </div>
+            <div class="ord-card__items">Hennessy VS · Coca-Cola ×6</div>
+            <div class="ord-card__foot">
+              <span class="ord-card__meta">9 Jul · 20:11</span>
+              <span class="ord-card__total">$66.90</span>
+            </div>
+          </a>
+
+          <a href="order-detail.html" class="ord-card">
+            <div class="ord-card__top">
+              <span class="ord-card__id">Order #DAD-2019</span>
+              <span class="pill pill--ok"><span class="pill__dot"></span>Delivered</span>
+            </div>
+            <div class="ord-card__items">Gordons OG · Red Square Wild Berry ×2</div>
+            <div class="ord-card__foot">
+              <span class="ord-card__meta">2 Jul · 17:47</span>
+              <span class="ord-card__total">$35.00</span>
+            </div>
+          </a>
+
+          <a href="order-detail.html" class="ord-card">
+            <div class="ord-card__top">
+              <span class="ord-card__id">Order #DAD-2004</span>
+              <span class="pill"><span class="pill__dot"></span>Cancelled</span>
+            </div>
+            <div class="ord-card__items">Zambezi Lager ×12</div>
+            <div class="ord-card__foot">
+              <span class="ord-card__meta">28 Jun · 19:05</span>
+              <span class="ord-card__total">$18.00</span>
+            </div>
+          </a>
+
+          <div style="height:16px;"></div>
+        </div>
+
+        <nav class="tabbar">
+          <a href="home.html"><span class="ico">🏠</span>Home</a>
+          <a href="catalogue.html"><span class="ico">🍾</span>Shop</a>
+          <a href="orders.html" class="is-active"><span class="ico">🧾</span>Orders</a>
+          <a href="credit.html"><span class="ico">💳</span>Credit</a>
+          <a href="account.html"><span class="ico">👤</span>Account</a>
+        </nav>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
