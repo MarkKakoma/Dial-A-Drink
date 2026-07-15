@@ -633,6 +633,26 @@ ul, ol { list-style: none; }
 .ord-card__eta { font-size: .82rem; font-weight: 600; color: var(--brown); }
 .ord-card__go { font-size: .85rem; font-weight: 700; color: var(--gold); }
 
+/* ---------- 7h. ORDER DETAIL / RECEIPT ---------- */
+.od-banner {
+  display: flex; align-items: center; gap: 12px;
+  margin: 16px 18px; padding: 16px;
+  background: var(--ok-bg); border-radius: var(--radius);
+}
+.od-banner__icon {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--ok); color: #fff; display: grid; place-items: center;
+  font-size: 1.2rem; font-weight: 700; flex: none;
+}
+.od-banner__body { flex: 1; display: flex; flex-direction: column; }
+.od-banner__body strong { font-size: 1rem; color: var(--ok); }
+.od-banner__body span { font-size: .82rem; color: var(--muted); }
+.od-banner__id { font-size: .82rem; font-weight: 600; color: var(--muted); }
+
+.od-line { display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; font-size: .88rem; }
+.od-line__k { color: var(--muted); flex: none; }
+.od-line__v { text-align: right; color: var(--ink); font-weight: 500; }
+
 /* ---------- 9. UTILITIES & RESPONSIVE ---------- */
 .pad   { padding: 18px; }
 .stack { display: flex; flex-direction: column; }

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dial A Drink — Order detail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <div class="stage">
+    <div class="phone">
+      <div class="phone__notch"></div>
+      <div class="phone__screen">
+
+        <div class="statusbar">
+          <span>9:41</span>
+          <span class="statusbar__icons"><span>📶</span><span>🔋</span></span>
+        </div>
+
+        <header class="appbar">
+          <a href="orders.html" class="appbar__back">‹</a>
+          <span class="appbar__title">Order detail</span>
+        </header>
+
+        <div class="screen">
+
+          <!-- status banner -->
+          <div class="od-banner">
+            <div class="od-banner__icon">✓</div>
+            <div class="od-banner__body">
+              <strong>Delivered</strong>
+              <span>14 Jul 2026 · 18:24</span>
+            </div>
+            <span class="od-banner__id">#DAD-2041</span>
+          </div>
+
+          <!-- line items -->
+          <div class="co-sec">
+            <div class="co-sec__label">Items</div>
+            <div id="items"></div>
+          </div>
+
+          <!-- delivered to -->
+          <div class="co-sec">
+            <div class="co-sec__label">Delivered to</div>
+            <div class="od-line"><span class="od-line__k">📍 Address</span><span class="od-line__v">12 Samora Machel Ave, Harare</span></div>
+            <div class="od-line"><span class="od-line__k">🕓 Time</span><span class="od-line__v">ASAP · arrived 18:24</span></div>
+            <div class="od-line"><span class="od-line__k">🛵 Driver</span><span class="od-line__v">Tapiwa Moyo</span></div>
+          </div>
+
+          <!-- payment -->
+          <div class="co-sec">
+            <div class="co-sec__label">Payment</div>
+            <div class="od-line"><span class="od-line__k">📱 Method</span><span class="od-line__v">EcoCash</span></div>
+            <div class="od-line"><span class="od-line__k">🧾 Reference</span><span class="od-line__v">MP250714.1824.A48213</span></div>
+          </div>
+
+          <!-- summary -->
+          <div class="co-sec">
+            <div class="co-sec__label">Summary</div>
+            <div class="co-summary">
+              <div class="co-line"><span>Subtotal</span><span id="subtotal">$0.00</span></div>
+              <div class="co-line"><span>Delivery fee</span><span>$3.00</span></div>
+              <div class="co-line co-line--total"><span>Total paid</span><span id="grandtotal">$0.00</span></div>
+            </div>
+          </div>
+
+          <div style="height:96px;"></div>
+        </div>
+
+        <!-- sticky reorder -->
+        <div class="pd__bar">
+          <a href="account-help.html" class="btn btn--ghost" style="width:auto; padding-left:20px; padding-right:20px;">Get help</a>
+          <a href="catalogue.html" class="btn btn--gold" style="width:auto; padding-left:26px; padding-right:26px;">Reorder</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="products.js"></script>
+  <script>
+    // this receipt = order #DAD-2041
+    const ORDER = [
+      { id: 'p062', qty: 1 },  // Bob's Your Uncle Sauv Blanc
+      { id: 'p037', qty: 4 },  // Hunters Dry
+    ];
+    const DELIVERY = 3.00;
+
+    // fall back gracefully if an id is missing
+    const itemsEl = document.getElementById('items');
+    let subtotal = 0;
+    itemsEl.innerHTML = ORDER.map(ci => {
+      const p = byId(ci.id); if(!p) return '';
+      const lt = p.price * ci.qty; subtotal += lt;
+      return `
+        <div class="co-item">
+          <div class="co-item__img">${p.emoji}</div>
+          <div class="co-item__body">
+            <div class="co-item__name">${p.name}</div>
+            <div class="co-item__size">${p.size} · ${money(p.price)}</div>
+          </div>
+          <div class="co-item__qty">
+            <span class="co-item__q">×${ci.qty}</span>
+            <span class="co-item__price">${money(lt)}</span>
+          </div>
+        </div>`;
+    }).join('');
+
+    document.getElementById('subtotal').textContent = money(subtotal);
+    document.getElementById('grandtotal').textContent = money(subtotal + DELIVERY);
+  </script>
+</body>
+</html>
