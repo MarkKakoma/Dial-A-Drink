@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dial A Drink — Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <div class="stage">
+    <div class="phone">
+      <div class="phone__notch"></div>
+      <div class="phone__screen">
+
+        <!-- status bar -->
+        <div class="statusbar">
+          <span>9:41</span>
+          <span class="statusbar__icons"><span>📶</span><span>🔋</span></span>
+        </div>
+
+        <!-- scrollable app viewport -->
+        <div class="screen home">
+
+          <!-- header -->
+          <header class="home__head">
+            <div class="home__head-top">
+              <img src="../assets/logo.png" alt="Dial A Drink" class="home__logo" />
+              <a href="account.html" class="home__avatar" aria-label="Account">T</a>
+            </div>
+            <h1 class="home__greet">Evening, Tapiwa 👋</h1>
+            <div class="home__status">
+              <span class="pill pill--ok"><span class="pill__dot"></span>Open</span>
+              <span class="muted">Delivering now · until 20:00</span>
+            </div>
+            <a href="credit.html" class="home__credit">
+              <div>
+                <span class="home__credit-label">Store credit</span>
+                <span class="home__credit-amount">$4.50</span>
+              </div>
+              <span class="home__credit-go">›</span>
+            </a>
+          </header>
+
+          <!-- active order -->
+          <a href="tracking.html" class="active-order">
+            <div class="active-order__pulse"></div>
+            <div class="active-order__body">
+              <span class="active-order__label">Order on the way</span>
+              <span class="active-order__eta">Arriving in about 12 min</span>
+            </div>
+            <span class="active-order__go">›</span>
+          </a>
+
+          <!-- primary action -->
+          <div class="pad">
+            <a href="catalogue.html" class="btn btn--gold">Browse the catalogue</a>
+          </div>
+
+          <!-- quick tiles -->
+          <div class="tiles">
+            <a href="catalogue.html" class="tile">
+              <span class="tile__icon">🍾</span>
+              <span class="tile__label">Catalogue</span>
+            </a>
+            <a href="buy-a-round.html" class="tile">
+              <span class="tile__icon">🥂</span>
+              <span class="tile__label">Buy A Round</span>
+            </a>
+            <a href="credit.html" class="tile">
+              <span class="tile__icon">💳</span>
+              <span class="tile__label">Store credit</span>
+            </a>
+            <a href="orders.html" class="tile">
+              <span class="tile__icon">🔁</span>
+              <span class="tile__label">Reorder</span>
+            </a>
+          </div>
+
+          <!-- recent orders -->
+          <div class="home__section-row">
+            <span class="section-label" style="padding:0;">Recent orders</span>
+            <a href="orders.html" class="home__seeall">See all</a>
+          </div>
+
+          <a href="order-detail.html" class="row">
+            <div class="row__body">
+              <div class="row__title">Jameson Irish Whisky + 2 more</div>
+              <div class="row__sub">14 Jul · $58.00</div>
+            </div>
+            <div class="row__meta"><span class="pill pill--ok"><span class="pill__dot"></span>Delivered</span></div>
+          </a>
+          <a href="order-detail.html" class="row">
+            <div class="row__body">
+              <div class="row__title">Two Oceans Sauvignon Blanc</div>
+              <div class="row__sub">9 Jul · $12.00</div>
+            </div>
+            <div class="row__meta"><span class="pill pill--ok"><span class="pill__dot"></span>Delivered</span></div>
+          </a>
+
+          <div style="height:16px;"></div>
+        </div>
+
+        <!-- bottom tab bar -->
+        <nav class="tabbar">
+          <a href="home.html" class="is-active"><span class="ico">🏠</span>Home</a>
+          <a href="catalogue.html"><span class="ico">🍾</span>Shop</a>
+          <a href="orders.html"><span class="ico">🧾</span>Orders</a>
+          <a href="credit.html"><span class="ico">💳</span>Credit</a>
+          <a href="account.html"><span class="ico">👤</span>Account</a>
+        </nav>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>

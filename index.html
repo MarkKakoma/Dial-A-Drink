@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dial A Drink Zimbabwe — Prototype</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="lobby">
+    <img src="assets/logo.png" alt="Dial A Drink Zimbabwe" class="lobby__logo" />
+    <p class="lobby__tag">Satisfaction brought to you</p>
+
+    <div class="lobby__grid">
+      <!-- Customer -->
+      <a class="door" href="app/catalogue.html">
+        <div class="door__icon">🛍️</div>
+        <h2>Customer app</h2>
+        <p>What the buyer sees — browse, order, track and pay.</p>
+        <div class="door__links">
+          <span>Catalogue → Product → Cart</span>
+          <span>Live tracking · Store credit · Buy A Round</span>
+        </div>
+      </a>
+
+      <!-- Driver -->
+      <a class="door" href="driver/job.html">
+        <div class="door__icon">🛵</div>
+        <h2>Driver app</h2>
+        <p>What the driver holds — accept jobs and deliver.</p>
+        <div class="door__links">
+          <span>Job offer</span>
+          <span>Active delivery</span>
+        </div>
+      </a>
+
+      <!-- Admin -->
+      <a class="door" href="admin/desktop/orders.html">
+        <div class="door__icon">🗂️</div>
+        <h2>Admin</h2>
+        <p>What the business runs on — desktop console and a phone view for on-the-go ops.</p>
+        <div class="door__links">
+          <span>Desktop: orders, drivers, cash, stock</span>
+          <span>Phone: orders, drivers</span>
+        </div>
+      </a>
+    </div>
+
+    <p class="lobby__note">
+      Visual prototype. Screens are static and illustrative — nothing is
+      connected to a database, payment provider or live map. Built to show the
+      product and to give a developer something concrete to build from.
+    </p>
+  </main>
+</body>
+</html>
