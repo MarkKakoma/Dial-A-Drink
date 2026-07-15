@@ -984,6 +984,29 @@ ul, ol { list-style: none; }
 .aord__driver { font-size: .82rem; font-weight: 600; color: var(--ink); }
 .aord__ok { font-size: .8rem; font-weight: 600; color: var(--ok); }
 
+/* ---------- 8f. ADMIN PHONE APP — HOME ---------- */
+.ahome-greet { display: flex; flex-direction: column; }
+.ahome-greet span { font-size: .82rem; opacity: .85; }
+.ahome-greet strong { font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; }
+
+.aadmin-alert--link { justify-content: space-between; }
+.aadmin-alert__go { font-size: 1.4rem; color: var(--alert); margin-left: auto; }
+
+.ahome-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 0 18px; }
+.ahome-tile { background: var(--white); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+.ahome-tile strong { display: block; font-family: var(--font-display); font-weight: 600; font-size: 1.6rem; color: var(--brown); }
+.ahome-tile span { font-size: .78rem; color: var(--muted); }
+
+.ahome-actions { padding: 0 18px; display: flex; flex-direction: column; gap: 10px; }
+.ahome-action { display: flex; align-items: center; gap: 12px; background: var(--white); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+.ahome-action__icon { width: 42px; height: 42px; border-radius: 10px; background: var(--cream-deep); display: grid; place-items: center; font-size: 1.3rem; flex: none; }
+.ahome-action strong { display: block; font-size: .9rem; color: var(--brown); }
+.ahome-action span { font-size: .78rem; color: var(--muted); }
+.ahome-action__go { margin-left: auto; font-size: 1.3rem; color: var(--line); }
+
+.ahome-note { display: flex; gap: 10px; margin: 16px 18px 0; padding: 14px; background: var(--warn-bg); border-radius: 12px; }
+.ahome-note p { font-size: .82rem; color: #6b4e1f; line-height: 1.5; }
+
 /* ---------- 9. UTILITIES & RESPONSIVE ---------- */
 /* clears fixed .pd__bar so last content isn't hidden behind it */
 .screen--hasbar { padding-bottom: 92px; }

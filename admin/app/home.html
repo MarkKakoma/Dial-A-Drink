@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dial A Drink — Admin app · Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+</head>
+<body>
+  <div class="stage">
+    <div class="phone">
+      <div class="phone__notch"></div>
+      <div class="phone__screen">
+
+        <div class="statusbar">
+          <span>9:41</span>
+          <span class="statusbar__icons"><span>📶</span><span>🔋</span></span>
+        </div>
+
+        <!-- header -->
+        <header class="aadmin-bar">
+          <div class="aadmin-bar__row">
+            <img src="../../assets/logo.png" alt="Dial A Drink" class="aadmin-bar__logo" />
+            <span class="aadmin-bar__badge">Operations</span>
+          </div>
+          <div class="ahome-greet">
+            <span>Good afternoon, Rutendo</span>
+            <strong>Harare · open until 20:00</strong>
+          </div>
+        </header>
+
+        <div class="screen">
+
+          <!-- stalled alert (priority) -->
+          <a href="orders.html" class="aadmin-alert aadmin-alert--link">
+            <span>⚠️</span>
+            <div><strong>1 order needs attention</strong><span>#DAD-2048 stalled · James Moyo · 18 min</span></div>
+            <span class="aadmin-alert__go">›</span>
+          </a>
+
+          <!-- today snapshot -->
+          <div class="section-label">Today so far</div>
+          <div class="ahome-grid">
+            <div class="ahome-tile"><strong>28</strong><span>Delivered</span></div>
+            <div class="ahome-tile"><strong>12</strong><span>Active now</span></div>
+            <div class="ahome-tile"><strong>$1,840</strong><span>Revenue</span></div>
+            <div class="ahome-tile"><strong>6</strong><span>Drivers on</span></div>
+          </div>
+
+          <!-- quick actions -->
+          <div class="section-label">Quick actions</div>
+          <div class="ahome-actions">
+            <a href="orders.html" class="ahome-action">
+              <span class="ahome-action__icon">📋</span>
+              <div><strong>Order queue</strong><span>5 new · 1 stalled</span></div>
+              <span class="ahome-action__go">›</span>
+            </a>
+            <a href="drivers.html" class="ahome-action">
+              <span class="ahome-action__icon">🛵</span>
+              <div><strong>Drivers</strong><span>2 free · 3 on delivery · 1 stalled</span></div>
+              <span class="ahome-action__go">›</span>
+            </a>
+            <a href="../desktop/orders.html" class="ahome-action">
+              <span class="ahome-action__icon">🖥️</span>
+              <div><strong>Open desktop console</strong><span>Reconciliation, inventory &amp; more</span></div>
+              <span class="ahome-action__go">›</span>
+            </a>
+          </div>
+
+          <!-- end of day reminder -->
+          <div class="ahome-note">
+            <span>💰</span>
+            <p>End-of-day cash reconciliation is available on the desktop console after the 20:00 shift close.</p>
+          </div>
+
+          <div style="height:16px;"></div>
+        </div>
+
+        <!-- admin bottom nav -->
+        <nav class="tabbar">
+          <a href="home.html" class="is-active"><span class="ico">🏠</span>Home</a>
+          <a href="orders.html"><span class="ico">📋</span>Orders</a>
+          <a href="drivers.html"><span class="ico">🛵</span>Drivers</a>
+          <a href="../desktop/orders.html"><span class="ico">🖥️</span>Desktop</a>
+        </nav>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
