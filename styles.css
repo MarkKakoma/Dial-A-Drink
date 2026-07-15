@@ -732,6 +732,8 @@ ul, ol { list-style: none; }
 .bar-preview__msg { font-style: italic; font-size: .9rem; color: var(--ink); background: var(--white); border-radius: 10px; padding: 10px 12px; }
 
 /* ---------- 9. UTILITIES & RESPONSIVE ---------- */
+/* clears fixed .pd__bar so last content isn't hidden behind it */
+.screen--hasbar { padding-bottom: 92px; }
 .pad   { padding: 18px; }
 .stack { display: flex; flex-direction: column; }
 .gap8  { gap: 8px; } .gap12 { gap: 12px; } .gap16 { gap: 16px; }
