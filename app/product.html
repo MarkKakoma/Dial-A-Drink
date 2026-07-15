@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dial A Drink — Product</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <div class="stage">
+    <div class="phone">
+      <div class="phone__notch"></div>
+      <div class="phone__screen">
+
+        <div class="statusbar">
+          <span>9:41</span>
+          <span class="statusbar__icons"><span>📶</span><span>🔋</span></span>
+        </div>
+
+        <!-- app bar -->
+        <header class="appbar">
+          <a href="catalogue.html" class="appbar__back">‹</a>
+          <span class="appbar__title">Product</span>
+          <span class="appbar__spacer"></span>
+          <a href="cart.html" class="cat-head__cart">🛒<span class="cat-head__badge">3</span></a>
+        </header>
+
+        <!-- product body -->
+        <div class="screen" id="screen">
+          <div class="pd__hero" id="hero">🍾</div>
+
+          <div class="pd__body">
+            <span class="chip is-active" id="cat" style="pointer-events:none;">Category</span>
+            <h1 class="pd__name" id="name">Product name</h1>
+            <div class="pd__size" id="size">Size</div>
+            <div class="pd__price" id="price">$0.00</div>
+
+            <p class="pd__desc" id="desc">Description.</p>
+
+            <!-- size variants (shown only if the product has siblings) -->
+            <div id="variantWrap" style="display:none;">
+              <div class="pd__label">Size</div>
+              <div class="pd__variants" id="variants"></div>
+            </div>
+
+            <!-- quantity -->
+            <div class="pd__label">Quantity</div>
+            <div class="stepper">
+              <button class="stepper__btn" id="minus">−</button>
+              <span class="stepper__val" id="qty">1</span>
+              <button class="stepper__btn" id="plus">+</button>
+            </div>
+          </div>
+
+          <div style="height:96px;"></div>
+        </div>
+
+        <!-- sticky add to cart -->
+        <div class="pd__bar">
+          <div class="pd__bar-total">
+            <span>Total</span>
+            <strong id="total">$0.00</strong>
+          </div>
+          <a href="cart.html" class="btn btn--gold" style="width:auto; padding-left:28px; padding-right:28px;">Add to cart</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="products.js"></script>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const id = params.get('id') || PRODUCTS[0].id;
+    let product = byId(id) || PRODUCTS[0];
+    let qty = 1;
+
+    // detect size variants: products whose name shares a base (strip trailing size tokens)
+    function baseName(n){ return n.replace(/\s*\d+(\.\d+)?\s?(ml|l|ltr)\b/i,'').replace(/\s+\d+ml$/i,'').trim().toLowerCase(); }
+    const variants = PRODUCTS.filter(p => baseName(p.name) === baseName(product.name) && p.cat === product.cat);
+
+    function render() {
+      document.getElementById('hero').textContent = product.emoji;
+      document.getElementById('cat').textContent = product.cat;
+      document.getElementById('name').textContent = product.name;
+      document.getElementById('size').textContent = product.size;
+      document.getElementById('price').textContent = money(product.price);
+      document.getElementById('desc').textContent = product.desc;
+      document.getElementById('qty').textContent = qty;
+      document.getElementById('total').textContent = money(product.price * qty);
+
+      if (variants.length > 1) {
+        document.getElementById('variantWrap').style.display = 'block';
+        document.getElementById('variants').innerHTML = variants.map(v =>
+          `<button class="pd__variant ${v.id===product.id?'is-active':''}" data-id="${v.id}">${v.size}<span>${money(v.price)}</span></button>`
+        ).join('');
+        document.querySelectorAll('.pd__variant').forEach(b =>
+          b.addEventListener('click', () => { product = byId(b.dataset.id); render(); })
+        );
+      }
+    }
+
+    document.getElementById('minus').addEventListener('click', () => { if(qty>1){qty--; render();} });
+    document.getElementById('plus').addEventListener('click',  () => { qty++; render(); });
+    render();
+  </script>
+</body>
+</html>
