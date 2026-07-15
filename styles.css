@@ -170,6 +170,8 @@ ul, ol { list-style: none; }
   display: flex; flex-direction: column;
   padding-bottom: 20px;
 }
+/* direct children must not shrink, or trailing blocks collapse when content overflows */
+.screen > * { flex-shrink: 0; }
 .screen::-webkit-scrollbar { width: 0; }
 
 /* ---------- 6. DESKTOP BROWSER FRAME ---------- */
