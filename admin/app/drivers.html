@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dial A Drink — Admin app · Drivers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+</head>
+<body>
+  <div class="stage">
+    <div class="phone">
+      <div class="phone__notch"></div>
+      <div class="phone__screen">
+
+        <div class="statusbar">
+          <span>9:41</span>
+          <span class="statusbar__icons"><span>📶</span><span>🔋</span></span>
+        </div>
+
+        <header class="aadmin-bar">
+          <div class="aadmin-bar__row">
+            <img src="../../assets/logo.png" alt="Dial A Drink" class="aadmin-bar__logo" />
+            <span class="aadmin-bar__badge">Operations</span>
+          </div>
+          <div class="aadmin-bar__stats" style="grid-template-columns:repeat(3,1fr);">
+            <div class="aadmin-stat"><strong>2</strong><span>Free</span></div>
+            <div class="aadmin-stat"><strong>3</strong><span>On delivery</span></div>
+            <div class="aadmin-stat aadmin-stat--alert"><strong>1</strong><span>Stalled</span></div>
+          </div>
+        </header>
+
+        <div class="screen">
+
+          <!-- stalled first -->
+          <div class="section-label">Needs attention</div>
+          <div class="adrv adrv--alert">
+            <div class="adrv__av">J<span class="drv-dot drv-dot--stalled"></span></div>
+            <div class="adrv__body">
+              <strong>James Moyo</strong>
+              <span>#DAD-2048 · no movement 18 min</span>
+            </div>
+            <button class="btn btn--gold btn--sm">Call</button>
+          </div>
+
+          <!-- free -->
+          <div class="section-label">Available now</div>
+          <div class="adrv">
+            <div class="adrv__av">F<span class="drv-dot drv-dot--free"></span></div>
+            <div class="adrv__body">
+              <strong>Farai M.</strong>
+              <span>Free · near CBD · 2.8 km from store</span>
+            </div>
+            <span class="pill pill--ok">Free</span>
+          </div>
+          <div class="adrv">
+            <div class="adrv__av">P<span class="drv-dot drv-dot--free"></span></div>
+            <div class="adrv__body">
+              <strong>Panashe D.</strong>
+              <span>Free · Avenues · 1.9 km from store</span>
+            </div>
+            <span class="pill pill--ok">Free</span>
+          </div>
+
+          <!-- on delivery -->
+          <div class="section-label">On delivery</div>
+          <div class="adrv">
+            <div class="adrv__av">B<span class="drv-dot drv-dot--busy"></span></div>
+            <div class="adrv__body">
+              <strong>Blessing K.</strong>
+              <span>#DAD-2046 · Mount Pleasant</span>
+            </div>
+            <span class="pill pill--info">On delivery</span>
+          </div>
+          <div class="adrv">
+            <div class="adrv__av">C<span class="drv-dot drv-dot--busy"></span></div>
+            <div class="adrv__body">
+              <strong>Chipo N.</strong>
+              <span>#DAD-2043 · Highlands</span>
+            </div>
+            <span class="pill pill--info">On delivery</span>
+          </div>
+          <div class="adrv">
+            <div class="adrv__av">R<span class="drv-dot drv-dot--busy"></span></div>
+            <div class="adrv__body">
+              <strong>Rutendo H.</strong>
+              <span>#DAD-2042 · Msasa</span>
+            </div>
+            <span class="pill pill--info">On delivery</span>
+          </div>
+
+          <!-- off shift -->
+          <div class="section-label">Off shift</div>
+          <div class="adrv adrv--off">
+            <div class="adrv__av">M<span class="drv-dot drv-dot--off"></span></div>
+            <div class="adrv__body">
+              <strong>Munya S.</strong>
+              <span>Off shift · last seen 12:40</span>
+            </div>
+            <span class="pill">Off</span>
+          </div>
+
+          <div style="height:16px;"></div>
+        </div>
+
+        <nav class="tabbar">
+          <a href="home.html"><span class="ico">🏠</span>Home</a>
+          <a href="orders.html"><span class="ico">📋</span>Orders</a>
+          <a href="drivers.html" class="is-active"><span class="ico">🛵</span>Drivers</a>
+        </nav>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>

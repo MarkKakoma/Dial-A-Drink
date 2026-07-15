@@ -1010,6 +1010,16 @@ ul, ol { list-style: none; }
 .admin-back { margin-top: 24px; font-size: .85rem; font-weight: 600; color: var(--gold); }
 .admin-back:hover { color: var(--gold-bright); }
 
+/* ---------- 8g. ADMIN PHONE APP — DRIVERS ---------- */
+.adrv { display: flex; align-items: center; gap: 12px; margin: 0 18px 10px; padding: 12px 14px; background: var(--white); border: 1px solid var(--line); border-radius: 12px; }
+.adrv--alert { border-color: #eccfc7; background: var(--alert-bg); }
+.adrv--off { opacity: .6; }
+.adrv__av { position: relative; width: 42px; height: 42px; border-radius: 50%; background: var(--brown); color: var(--cream); display: grid; place-items: center; font-weight: 600; flex: none; }
+.adrv__av .drv-dot { position: absolute; bottom: 0; right: 0; width: 12px; height: 12px; border: 2px solid var(--white); }
+.adrv__body { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+.adrv__body strong { font-size: .9rem; }
+.adrv__body span { font-size: .78rem; color: var(--muted); }
+
 /* ---------- 9. UTILITIES & RESPONSIVE ---------- */
 /* clears fixed .pd__bar so last content isn't hidden behind it */
 .screen--hasbar { padding-bottom: 92px; }
