@@ -210,7 +210,7 @@ ul, ol { list-style: none; }
   display: flex; flex-direction: column;
   padding: 20px 14px;
 }
-.admin-side__logo { height: 46px; width: auto; margin: 4px 8px 22px; }
+.admin-side__logo { width: calc(100% - 16px); height: auto; max-height: 72px; object-fit: contain; margin: 8px 8px 24px; }
 .admin-nav { display: flex; flex-direction: column; gap: 3px; }
 .admin-nav a {
   display: flex; align-items: center; gap: 12px;
@@ -1119,9 +1119,8 @@ ul, ol { list-style: none; }
 .drvhome-row__badge { background: var(--alert); color: #fff; font-size: .7rem; font-weight: 700; min-width: 20px; height: 20px; border-radius: 999px; display: grid; place-items: center; padding: 0 6px; }
 .drvhome-row__go { font-size: 1.3rem; color: var(--line); }
 
-.drvhome-recent { margin: 0 18px; background: var(--white); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
-.drvrec { display: flex; justify-content: space-between; padding: 12px 16px; border-bottom: 1px solid var(--line); font-size: .85rem; }
-.drvrec:last-child { border-bottom: none; }
+.drvhome-recent { margin: 0 18px; background: var(--white); border: 1px solid var(--line); border-radius: 12px; }
+.drvrec { display: flex; justify-content: space-between; align-items: center; margin: 0 18px 8px; padding: 14px 16px; background: var(--white); border: 1px solid var(--line); border-radius: 12px; font-size: .88rem; }
 .drvrec span { color: var(--muted); }
 .drvrec strong { color: var(--ok); }
 
