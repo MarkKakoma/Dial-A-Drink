@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dial A Drink — Cart</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <div class="stage">
+    <div class="phone">
+      <div class="phone__notch"></div>
+      <div class="phone__screen">
+
+        <div class="statusbar">
+          <span>9:41</span>
+          <span class="statusbar__icons"><span>📶</span><span>🔋</span></span>
+        </div>
+
+        <header class="appbar">
+          <a href="catalogue.html" class="appbar__back">‹</a>
+          <span class="appbar__title">Cart &amp; checkout</span>
+        </header>
+
+        <div class="screen">
+
+          <!-- LINE ITEMS -->
+          <div class="co-sec">
+            <div class="co-sec__label">Your order</div>
+            <div id="items"></div>
+            <a href="catalogue.html" class="co-add">+ Add more drinks</a>
+          </div>
+
+          <!-- DELIVERY ADDRESS -->
+          <div class="co-sec">
+            <div class="co-sec__label">Deliver to</div>
+            <a href="account-addresses.html" class="co-select">
+              <span class="co-select__icon">📍</span>
+              <span class="co-select__body">
+                <strong>Home</strong>
+                <span>12 Samora Machel Ave, Harare</span>
+              </span>
+              <span class="co-select__go">Change</span>
+            </a>
+          </div>
+
+          <!-- DELIVERY SLOT -->
+          <div class="co-sec">
+            <div class="co-sec__label">Delivery time</div>
+            <button class="co-slot is-active" data-slot="asap" onclick="pickSlot(this)">
+              <span class="co-slot__body">
+                <strong>ASAP</strong>
+                <span>Today · 30–45 min</span>
+              </span>
+              <span class="co-slot__tick">✓</span>
+            </button>
+            <div class="co-sublabel">Or schedule for later today</div>
+            <div class="co-windows">
+              <button class="co-win" onclick="pickWindow(this)">13:00–14:00</button>
+              <button class="co-win" onclick="pickWindow(this)">14:00–15:00</button>
+              <button class="co-win" onclick="pickWindow(this)">15:00–16:00</button>
+              <button class="co-win" onclick="pickWindow(this)">16:00–17:00</button>
+              <button class="co-win" onclick="pickWindow(this)">17:00–18:00</button>
+              <button class="co-win" onclick="pickWindow(this)">18:00–19:00</button>
+            </div>
+          </div>
+
+          <!-- PAYMENT METHOD -->
+          <div class="co-sec">
+            <div class="co-sec__label">Payment method</div>
+            <div class="co-pays">
+              <button class="co-pay is-active" onclick="pickPay(this)">
+                <span class="co-pay__icon">📱</span>
+                <span class="co-pay__name">EcoCash</span>
+                <span class="co-pay__radio"></span>
+              </button>
+              <button class="co-pay" onclick="pickPay(this)">
+                <span class="co-pay__icon">💳</span>
+                <span class="co-pay__name">Card · Visa / Mastercard</span>
+                <span class="co-pay__radio"></span>
+              </button>
+              <button class="co-pay" onclick="pickPay(this)">
+                <span class="co-pay__icon">💵</span>
+                <span class="co-pay__name">Cash on delivery</span>
+                <span class="co-pay__radio"></span>
+              </button>
+              <button class="co-pay" onclick="pickPay(this)">
+                <span class="co-pay__icon">🎁</span>
+                <span class="co-pay__name">Store credit · $4.50</span>
+                <span class="co-pay__radio"></span>
+              </button>
+            </div>
+          </div>
+
+          <!-- ORDER SUMMARY -->
+          <div class="co-sec">
+            <div class="co-sec__label">Summary</div>
+            <div class="co-summary">
+              <div class="co-line"><span>Subtotal</span><span id="subtotal">$0.00</span></div>
+              <div class="co-line"><span>Delivery fee</span><span>$3.00</span></div>
+              <div class="co-line co-line--credit"><span>Store credit</span><span>−$4.50</span></div>
+              <div class="co-line co-line--total"><span>Total</span><span id="grandtotal">$0.00</span></div>
+            </div>
+          </div>
+
+          <div style="height:96px;"></div>
+        </div>
+
+        <!-- STICKY PLACE ORDER -->
+        <div class="pd__bar">
+          <div class="pd__bar-total">
+            <span>Total</span>
+            <strong id="bartotal">$0.00</strong>
+          </div>
+          <a href="tracking.html" class="btn btn--gold" style="width:auto; padding-left:26px; padding-right:26px;">Place order</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="products.js"></script>
+  <script>
+    // sample cart — three line items (matches the "3" badge elsewhere)
+    const CART = [
+      { id: 'p001', qty: 1 },  // Jameson Irish Whisky
+      { id: 'p035', qty: 6 },  // Castle Lager
+      { id: 'p029', qty: 1 },  // Amarula Cream 1L
+    ];
+    const DELIVERY = 3.00, CREDIT = 4.50;
+
+    const itemsEl = document.getElementById('items');
+    let subtotal = 0;
+    itemsEl.innerHTML = CART.map(ci => {
+      const p = byId(ci.id); if(!p) return '';
+      const lineTotal = p.price * ci.qty;
+      subtotal += lineTotal;
+      return `
+        <div class="co-item">
+          <div class="co-item__img">${p.emoji}</div>
+          <div class="co-item__body">
+            <div class="co-item__name">${p.name}</div>
+            <div class="co-item__size">${p.size} · ${money(p.price)}</div>
+          </div>
+          <div class="co-item__qty">
+            <span class="co-item__q">×${ci.qty}</span>
+            <span class="co-item__price">${money(lineTotal)}</span>
+          </div>
+        </div>`;
+    }).join('');
+
+    const grand = Math.max(0, subtotal + DELIVERY - CREDIT);
+    document.getElementById('subtotal').textContent = money(subtotal);
+    document.getElementById('grandtotal').textContent = money(grand);
+    document.getElementById('bartotal').textContent = money(grand);
+
+    // selectors
+    function pickSlot(el){
+      document.querySelectorAll('.co-slot').forEach(s=>s.classList.remove('is-active'));
+      el.classList.add('is-active');
+      document.querySelectorAll('.co-win').forEach(w=>w.classList.remove('is-active'));
+    }
+    function pickWindow(el){
+      document.querySelectorAll('.co-win').forEach(w=>w.classList.remove('is-active'));
+      el.classList.add('is-active');
+      document.querySelectorAll('.co-slot').forEach(s=>s.classList.remove('is-active'));
+    }
+    function pickPay(el){
+      document.querySelectorAll('.co-pay').forEach(p=>p.classList.remove('is-active'));
+      el.classList.add('is-active');
+    }
+  </script>
+</body>
+</html>

@@ -495,6 +495,60 @@ ul, ol { list-style: none; }
 .pd__bar-total span { font-size: .7rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
 .pd__bar-total strong { font-family: var(--font-display); font-size: 1.4rem; color: var(--brown); }
 
+/* ---------- 7e. CART & CHECKOUT ---------- */
+.co-sec { padding: 16px 18px; border-bottom: 8px solid var(--cream-deep); }
+.co-sec__label { font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.co-sublabel { font-size: .78rem; color: var(--muted); margin: 14px 0 10px; }
+
+.co-item { display: flex; align-items: center; gap: 12px; padding: 8px 0; }
+.co-item__img {
+  width: 48px; height: 48px; border-radius: 10px; flex: none;
+  display: grid; place-items: center; font-size: 1.5rem;
+  background: linear-gradient(160deg, var(--cream-deep), #e6dbc6);
+}
+.co-item__body { flex: 1; min-width: 0; }
+.co-item__name { font-weight: 600; font-size: .9rem; }
+.co-item__size { font-size: .78rem; color: var(--muted); }
+.co-item__qty { text-align: right; }
+.co-item__q { display: block; font-size: .78rem; color: var(--muted); }
+.co-item__price { display: block; font-weight: 600; font-size: .95rem; color: var(--brown); }
+.co-add { display: inline-block; margin-top: 10px; font-size: .85rem; font-weight: 600; color: var(--gold); }
+
+.co-select { display: flex; align-items: center; gap: 12px; padding: 14px; border: 1.5px solid var(--line); border-radius: 12px; background: var(--white); }
+.co-select__icon { font-size: 1.4rem; }
+.co-select__body { flex: 1; display: flex; flex-direction: column; }
+.co-select__body strong { font-size: .92rem; }
+.co-select__body span { font-size: .8rem; color: var(--muted); }
+.co-select__go { font-size: .82rem; font-weight: 600; color: var(--gold); }
+
+.co-slot { display: flex; align-items: center; width: 100%; padding: 14px; border: 1.5px solid var(--line); border-radius: 12px; background: var(--white); text-align: left; }
+.co-slot__body { flex: 1; display: flex; flex-direction: column; }
+.co-slot__body strong { font-size: .95rem; color: var(--brown); }
+.co-slot__body span { font-size: .8rem; color: var(--muted); }
+.co-slot__tick { opacity: 0; color: var(--gold); font-weight: 700; }
+.co-slot.is-active { border-color: var(--gold); background: var(--warn-bg); }
+.co-slot.is-active .co-slot__tick { opacity: 1; }
+
+.co-windows { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.co-win { padding: 10px 6px; border: 1.5px solid var(--line); border-radius: 10px; background: var(--white); font-size: .8rem; font-weight: 600; color: var(--brown); }
+.co-win.is-active { border-color: var(--gold); background: var(--warn-bg); }
+
+.co-pays { display: flex; flex-direction: column; gap: 10px; }
+.co-pay { display: flex; align-items: center; gap: 12px; width: 100%; padding: 14px; border: 1.5px solid var(--line); border-radius: 12px; background: var(--white); }
+.co-pay__icon { font-size: 1.3rem; }
+.co-pay__name { flex: 1; text-align: left; font-weight: 600; font-size: .9rem; color: var(--ink); }
+.co-pay__radio { width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--line); flex: none; position: relative; }
+.co-pay.is-active { border-color: var(--gold); background: var(--warn-bg); }
+.co-pay.is-active .co-pay__radio { border-color: var(--gold); }
+.co-pay.is-active .co-pay__radio::after { content: ""; position: absolute; inset: 3px; border-radius: 50%; background: var(--gold); }
+
+.co-summary { display: flex; flex-direction: column; gap: 10px; }
+.co-line { display: flex; justify-content: space-between; font-size: .9rem; color: var(--ink); }
+.co-line span:first-child { color: var(--muted); }
+.co-line--credit span:last-child { color: var(--ok); font-weight: 600; }
+.co-line--total { border-top: 1px solid var(--line); padding-top: 12px; margin-top: 4px; }
+.co-line--total span { font-family: var(--font-display); font-weight: 600; font-size: 1.2rem; color: var(--brown); }
+
 /* ---------- 9. UTILITIES & RESPONSIVE ---------- */
 .pad   { padding: 18px; }
 .stack { display: flex; flex-direction: column; }
