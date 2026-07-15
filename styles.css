@@ -792,6 +792,21 @@ ul, ol { list-style: none; }
 .pay-note__row { display: flex; align-items: center; gap: 12px; padding: 14px 16px; font-size: .9rem; font-weight: 500; color: var(--ink); border-bottom: 1px solid var(--line); }
 .pay-note__row:last-child { border-bottom: none; }
 
+/* ---------- 7m. SAVED ADDRESSES ---------- */
+.addr-card {
+  margin: 0 18px 12px; padding: 16px;
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
+}
+.addr-card__top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.addr-card__tag { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: .95rem; color: var(--brown); }
+.addr-card__pin { font-size: 1.1rem; }
+.addr-card__setdefault { border: 1.5px solid var(--line); background: var(--white); border-radius: 999px; padding: 4px 12px; font-size: .72rem; font-weight: 600; color: var(--gold); }
+.addr-card__lines { font-size: .9rem; color: var(--ink); line-height: 1.5; margin-bottom: 10px; }
+.addr-card__note { font-size: .8rem; color: var(--muted); background: var(--cream-deep); border-radius: 8px; padding: 8px 10px; margin-bottom: 12px; }
+.addr-card__actions { display: flex; gap: 8px; border-top: 1px solid var(--line); padding-top: 12px; }
+.addr-card__act { flex: 1; border: 1.5px solid var(--line); background: var(--white); border-radius: 10px; padding: 9px; font-size: .82rem; font-weight: 600; color: var(--brown); }
+.addr-card__act:hover { border-color: var(--gold); color: var(--gold); }
+
 /* ---------- 9. UTILITIES & RESPONSIVE ---------- */
 /* clears fixed .pd__bar so last content isn't hidden behind it */
 .screen--hasbar { padding-bottom: 92px; }

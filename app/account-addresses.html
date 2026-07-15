@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dial A Drink — Saved addresses</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <div class="stage">
+    <div class="phone">
+      <div class="phone__notch"></div>
+      <div class="phone__screen">
+
+        <div class="statusbar">
+          <span>9:41</span>
+          <span class="statusbar__icons"><span>📶</span><span>🔋</span></span>
+        </div>
+
+        <header class="appbar">
+          <a href="account.html" class="appbar__back">‹</a>
+          <span class="appbar__title">Saved addresses</span>
+        </header>
+
+        <div class="screen screen--hasbar">
+
+          <div class="section-label">Your addresses</div>
+
+          <!-- Home -->
+          <div class="addr-card">
+            <div class="addr-card__top">
+              <span class="addr-card__tag"><span class="addr-card__pin">🏠</span> Home</span>
+              <span class="pay-card__default">Default</span>
+            </div>
+            <div class="addr-card__lines">
+              12 Samora Machel Ave<br />
+              Belgravia, Harare
+            </div>
+            <div class="addr-card__note">🔔 Gate code #4821 · call on arrival</div>
+            <div class="addr-card__actions">
+              <button class="addr-card__act">Edit</button>
+              <button class="addr-card__act">Delete</button>
+            </div>
+          </div>
+
+          <!-- Work -->
+          <div class="addr-card">
+            <div class="addr-card__top">
+              <span class="addr-card__tag"><span class="addr-card__pin">🏢</span> Work</span>
+              <button class="addr-card__setdefault">Set default</button>
+            </div>
+            <div class="addr-card__lines">
+              Joina City, 8th Floor<br />
+              Jason Moyo Ave, Harare CBD
+            </div>
+            <div class="addr-card__note">🔔 Reception will receive · 08:00–17:00</div>
+            <div class="addr-card__actions">
+              <button class="addr-card__act">Edit</button>
+              <button class="addr-card__act">Delete</button>
+            </div>
+          </div>
+
+          <!-- add -->
+          <div class="pad">
+            <button class="pay-add">
+              <span>＋</span> Add a new address
+            </button>
+          </div>
+
+        </div>
+
+        <!-- sticky done -->
+        <div class="pd__bar">
+          <a href="account.html" class="btn btn--gold">Done</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
