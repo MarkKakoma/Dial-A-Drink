@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dial A Drink — Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <main class="lobby">
+    <img src="../assets/logo.png" alt="Dial A Drink Zimbabwe" class="lobby__logo" />
+    <p class="lobby__tag">Operations &amp; admin</p>
+
+    <div class="lobby__grid" style="max-width:720px; grid-template-columns:1fr 1fr;">
+      <!-- Desktop -->
+      <a class="door" href="desktop/orders.html">
+        <div class="door__icon">🖥️</div>
+        <h2>Desktop console</h2>
+        <p>The full operations tool — for serious work at a desk.</p>
+        <div class="door__links">
+          <span>Order dashboard &amp; driver assignment</span>
+          <span>Live driver map</span>
+          <span>Cash reconciliation</span>
+          <span>Inventory management</span>
+        </div>
+      </a>
+
+      <!-- Phone app -->
+      <a class="door" href="app/home.html">
+        <div class="door__icon">📱</div>
+        <h2>Phone app</h2>
+        <p>On-the-go ops — reassign a stalled delivery from anywhere.</p>
+        <div class="door__links">
+          <span>At-a-glance home</span>
+          <span>Order queue</span>
+          <span>Driver status</span>
+        </div>
+      </a>
+    </div>
+
+    <p class="lobby__note">
+      Same operations backend, two form factors. The desktop console is where
+      end-of-day cash reconciliation and inventory live; the phone app is for a
+      manager who's away from their desk.
+    </p>
+
+    <a href="../index.html" class="admin-back">‹ Back to all surfaces</a>
+  </main>
+</body>
+</html>

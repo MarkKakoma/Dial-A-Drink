@@ -1007,6 +1007,9 @@ ul, ol { list-style: none; }
 .ahome-note { display: flex; gap: 10px; margin: 16px 18px 0; padding: 14px; background: var(--warn-bg); border-radius: 12px; }
 .ahome-note p { font-size: .82rem; color: #6b4e1f; line-height: 1.5; }
 
+.admin-back { margin-top: 24px; font-size: .85rem; font-weight: 600; color: var(--gold); }
+.admin-back:hover { color: var(--gold-bright); }
+
 /* ---------- 9. UTILITIES & RESPONSIVE ---------- */
 /* clears fixed .pd__bar so last content isn't hidden behind it */
 .screen--hasbar { padding-bottom: 92px; }
