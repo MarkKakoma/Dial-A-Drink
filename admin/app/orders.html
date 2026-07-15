@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dial A Drink — Admin · Orders</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+</head>
+<body>
+  <div class="stage">
+    <div class="browser">
+      <div class="browser__bar">
+        <div class="browser__dots"><i></i><i></i><i></i></div>
+        <div class="browser__url">admin.dialadrink.co.zw/orders</div>
+      </div>
+      <div class="browser__body">
+
+        <!-- SIDEBAR -->
+        <aside class="admin-side">
+          <img src="../../assets/logo-light.png" alt="Dial A Drink" class="admin-side__logo" />
+          <nav class="admin-nav">
+            <a href="orders.html" class="is-active"><span class="admin-nav__icon">📋</span>Orders</a>
+            <a href="drivers.html"><span class="admin-nav__icon">🛵</span>Drivers</a>
+            <a href="reconciliation.html"><span class="admin-nav__icon">💰</span>Reconciliation</a>
+            <a href="inventory.html"><span class="admin-nav__icon">📦</span>Inventory</a>
+          </nav>
+          <div class="admin-side__foot">
+            Signed in as Operations<br />Harare · 15 Jul 2026
+          </div>
+        </aside>
+
+        <!-- MAIN -->
+        <main class="admin-main">
+          <div class="admin-head">
+            <div>
+              <h1>Order dashboard</h1>
+              <div class="admin-head__sub">Live queue · updated 14:07</div>
+            </div>
+            <button class="btn btn--gold btn--sm">Refresh</button>
+          </div>
+
+          <!-- status counts -->
+          <div class="admin-content">
+            <div class="stat-row">
+              <div class="stat"><span class="stat__num">5</span><span class="stat__label">New</span></div>
+              <div class="stat"><span class="stat__num">3</span><span class="stat__label">Assigned</span></div>
+              <div class="stat"><span class="stat__num">4</span><span class="stat__label">In transit</span></div>
+              <div class="stat"><span class="stat__num">28</span><span class="stat__label">Delivered today</span></div>
+              <div class="stat stat--alert"><span class="stat__num">1</span><span class="stat__label">Stalled</span></div>
+            </div>
+
+            <!-- two-pane: queue + detail -->
+            <div class="ord-layout">
+
+              <!-- QUEUE -->
+              <div class="ord-queue">
+                <div class="ord-queue__head">Incoming queue</div>
+
+                <div class="qrow is-selected">
+                  <div class="qrow__top"><span class="qrow__id">#DAD-2048</span><span class="qrow__time">14:02</span></div>
+                  <div class="qrow__cust">T. Moyo · Belgravia</div>
+                  <div class="qrow__foot"><span class="qrow__val">$63.50</span><span class="pill pill--alert"><span class="pill__dot"></span>Stalled</span></div>
+                </div>
+
+                <div class="qrow">
+                  <div class="qrow__top"><span class="qrow__id">#DAD-2047</span><span class="qrow__time">14:00</span></div>
+                  <div class="qrow__cust">R. Ncube · Avondale</div>
+                  <div class="qrow__foot"><span class="qrow__val">$22.50</span><span class="pill pill--info"><span class="pill__dot"></span>In transit</span></div>
+                </div>
+
+                <div class="qrow">
+                  <div class="qrow__top"><span class="qrow__id">#DAD-2046</span><span class="qrow__time">13:58</span></div>
+                  <div class="qrow__cust">K. Dube · Mount Pleasant</div>
+                  <div class="qrow__foot"><span class="qrow__val">$115.00</span><span class="pill pill--warn"><span class="pill__dot"></span>Assigned</span></div>
+                </div>
+
+                <div class="qrow">
+                  <div class="qrow__top"><span class="qrow__id">#DAD-2045</span><span class="qrow__time">13:55</span></div>
+                  <div class="qrow__cust">P. Sibanda · Borrowdale</div>
+                  <div class="qrow__foot"><span class="qrow__val">$41.00</span><span class="pill"><span class="pill__dot"></span>New</span></div>
+                </div>
+
+                <div class="qrow">
+                  <div class="qrow__top"><span class="qrow__id">#DAD-2044</span><span class="qrow__time">13:52</span></div>
+                  <div class="qrow__cust">L. Chikowore · CBD</div>
+                  <div class="qrow__foot"><span class="qrow__val">$18.00</span><span class="pill"><span class="pill__dot"></span>New</span></div>
+                </div>
+
+                <div class="qrow">
+                  <div class="qrow__top"><span class="qrow__id">#DAD-2043</span><span class="qrow__time">13:49</span></div>
+                  <div class="qrow__cust">M. Ndlovu · Highlands</div>
+                  <div class="qrow__foot"><span class="qrow__val">$76.00</span><span class="pill pill--info"><span class="pill__dot"></span>In transit</span></div>
+                </div>
+              </div>
+
+              <!-- DETAIL -->
+              <div class="ord-detail">
+                <div class="ord-detail__head">
+                  <div>
+                    <span class="ord-detail__id">#DAD-2048</span>
+                    <span class="pill pill--alert"><span class="pill__dot"></span>Stalled · 18 min no movement</span>
+                  </div>
+                  <span class="ord-detail__time">Placed 14:02 · ASAP</span>
+                </div>
+
+                <div class="ord-detail__grid">
+                  <!-- contents -->
+                  <div class="ord-detail__card">
+                    <div class="ord-detail__label">Contents</div>
+                    <div class="dline"><span>Jameson Irish Whisky</span><span>×1 · $30.00</span></div>
+                    <div class="dline"><span>Castle Lager</span><span>×6 · $9.00</span></div>
+                    <div class="dline"><span>Amarula Cream 1L</span><span>×1 · $26.00</span></div>
+                    <div class="dline dline--total"><span>Total</span><span>$63.50</span></div>
+                  </div>
+
+                  <!-- customer + payment -->
+                  <div class="ord-detail__card">
+                    <div class="ord-detail__label">Customer &amp; delivery</div>
+                    <div class="dinfo"><span>👤</span> Tapiwa Moyo · +263 77 234 9910</div>
+                    <div class="dinfo"><span>📍</span> 12 Samora Machel Ave, Belgravia</div>
+                    <div class="dinfo"><span>💵</span> Cash on delivery · needs $6.50 change</div>
+                    <div class="dinfo"><span>🎁</span> $4.50 store credit applied</div>
+                  </div>
+                </div>
+
+                <!-- driver assignment -->
+                <div class="ord-assign">
+                  <div class="ord-detail__label">Assign a driver</div>
+                  <div class="driver-opt">
+                    <div class="driver-opt__av">B</div>
+                    <div class="driver-opt__body"><strong>Blessing K.</strong><span>Free · 1.2 km from pickup</span></div>
+                    <button class="btn btn--gold btn--sm">Assign</button>
+                  </div>
+                  <div class="driver-opt">
+                    <div class="driver-opt__av">F</div>
+                    <div class="driver-opt__body"><strong>Farai M.</strong><span>Free · 2.8 km from pickup</span></div>
+                    <button class="btn btn--gold btn--sm">Assign</button>
+                  </div>
+                  <div class="driver-opt driver-opt--busy">
+                    <div class="driver-opt__av">T</div>
+                    <div class="driver-opt__body"><strong>Tapiwa Moyo</strong><span>On #DAD-2048 · stalled</span></div>
+                    <button class="btn btn--ghost btn--sm">Reassign</button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </main>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>

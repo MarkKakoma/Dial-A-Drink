@@ -832,6 +832,48 @@ ul, ol { list-style: none; }
 .faq[open] summary { padding-bottom: 6px; }
 .faq p { padding: 0 16px 16px; font-size: .86rem; color: var(--ink); line-height: 1.55; }
 
+/* ---------- 8a. ADMIN — ORDER DASHBOARD ---------- */
+.stat-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-bottom: 22px; }
+.stat { background: var(--white); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; }
+.stat__num { display: block; font-family: var(--font-display); font-weight: 600; font-size: 1.9rem; color: var(--brown); line-height: 1; }
+.stat__label { display: block; font-size: .8rem; color: var(--muted); margin-top: 4px; }
+.stat--alert { background: var(--alert-bg); border-color: #eccfc7; }
+.stat--alert .stat__num { color: var(--alert); }
+
+.ord-layout { display: grid; grid-template-columns: 320px 1fr; gap: 18px; align-items: start; }
+
+.ord-queue { background: var(--white); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.ord-queue__head { padding: 14px 16px; font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--line); }
+.qrow { padding: 12px 16px; border-bottom: 1px solid var(--line); cursor: pointer; border-left: 3px solid transparent; }
+.qrow:hover { background: var(--cream); }
+.qrow.is-selected { background: var(--cream); border-left-color: var(--gold); }
+.qrow__top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+.qrow__id { font-weight: 700; font-size: .85rem; color: var(--brown); }
+.qrow__time { font-size: .76rem; color: var(--muted); }
+.qrow__cust { font-size: .82rem; color: var(--ink); margin-bottom: 8px; }
+.qrow__foot { display: flex; justify-content: space-between; align-items: center; }
+.qrow__val { font-weight: 600; font-size: .88rem; color: var(--brown); }
+
+.ord-detail { background: var(--white); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
+.ord-detail__head { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 18px; }
+.ord-detail__id { font-family: var(--font-display); font-weight: 600; font-size: 1.3rem; color: var(--brown); margin-right: 12px; }
+.ord-detail__time { font-size: .82rem; color: var(--muted); }
+.ord-detail__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 18px; }
+.ord-detail__card { background: var(--cream); border-radius: 10px; padding: 16px; }
+.ord-detail__label { font-size: .72rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.dline { display: flex; justify-content: space-between; font-size: .86rem; padding: 5px 0; color: var(--ink); }
+.dline--total { border-top: 1px solid var(--line); margin-top: 6px; padding-top: 10px; font-weight: 700; color: var(--brown); }
+.dinfo { display: flex; align-items: center; gap: 8px; font-size: .85rem; color: var(--ink); padding: 5px 0; }
+
+.ord-assign { background: var(--cream); border-radius: 10px; padding: 16px; }
+.driver-opt { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.driver-opt:last-child { border-bottom: none; }
+.driver-opt__av { width: 38px; height: 38px; border-radius: 50%; background: var(--brown); color: var(--cream); display: grid; place-items: center; font-weight: 600; flex: none; }
+.driver-opt__body { flex: 1; display: flex; flex-direction: column; }
+.driver-opt__body strong { font-size: .9rem; }
+.driver-opt__body span { font-size: .78rem; color: var(--muted); }
+.driver-opt--busy { opacity: .75; }
+
 /* ---------- 9. UTILITIES & RESPONSIVE ---------- */
 /* clears fixed .pd__bar so last content isn't hidden behind it */
 .screen--hasbar { padding-bottom: 92px; }
