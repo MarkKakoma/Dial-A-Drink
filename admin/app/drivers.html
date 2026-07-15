@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dial A Drink — Admin · Drivers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+</head>
+<body>
+  <div class="admin-shell">
+
+    <!-- SIDEBAR -->
+    <aside class="admin-side">
+      <img src="../../assets/logo-light.png" alt="Dial A Drink" class="admin-side__logo" />
+      <nav class="admin-nav">
+        <a href="orders.html"><span class="admin-nav__icon">📋</span>Orders</a>
+        <a href="drivers.html" class="is-active"><span class="admin-nav__icon">🛵</span>Drivers</a>
+        <a href="reconciliation.html"><span class="admin-nav__icon">💰</span>Reconciliation</a>
+        <a href="inventory.html"><span class="admin-nav__icon">📦</span>Inventory</a>
+      </nav>
+      <div class="admin-side__foot">
+        Signed in as Operations<br />Harare · 15 Jul 2026
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="admin-main">
+      <div class="admin-head">
+        <div>
+          <h1>Driver map</h1>
+          <div class="admin-head__sub">6 drivers on shift · updated 14:07</div>
+        </div>
+        <div class="drv-legend">
+          <span class="drv-legend__item"><span class="drv-dot drv-dot--free"></span>Free</span>
+          <span class="drv-legend__item"><span class="drv-dot drv-dot--busy"></span>On delivery</span>
+          <span class="drv-legend__item"><span class="drv-dot drv-dot--stalled"></span>Stalled</span>
+          <span class="drv-legend__item"><span class="drv-dot drv-dot--off"></span>Off shift</span>
+        </div>
+      </div>
+
+      <div class="drv-layout">
+
+        <!-- MAP -->
+        <div class="drv-map">
+          <svg class="drv-map__grid" viewBox="0 0 900 640" preserveAspectRatio="xMidYMid slice">
+            <rect width="900" height="640" fill="#e9e1d0"/>
+            <g stroke="#dcd2bd" stroke-width="14">
+              <line x1="0" y1="130" x2="900" y2="130"/>
+              <line x1="0" y1="320" x2="900" y2="320"/>
+              <line x1="0" y1="510" x2="900" y2="510"/>
+              <line x1="180" y1="0" x2="180" y2="640"/>
+              <line x1="430" y1="0" x2="430" y2="640"/>
+              <line x1="680" y1="0" x2="680" y2="640"/>
+            </g>
+            <g stroke="#efe8d8" stroke-width="6">
+              <line x1="0" y1="225" x2="900" y2="225"/>
+              <line x1="0" y1="415" x2="900" y2="415"/>
+              <line x1="305" y1="0" x2="305" y2="640"/>
+              <line x1="555" y1="0" x2="555" y2="640"/>
+            </g>
+          </svg>
+
+          <!-- store -->
+          <div class="drv-marker drv-marker--store" style="left:430px; top:320px;">🏪</div>
+
+          <!-- drivers -->
+          <div class="drv-marker drv-marker--busy" style="left:250px; top:190px;"><span>🛵</span><small>B</small></div>
+          <div class="drv-marker drv-marker--free" style="left:620px; top:250px;"><span>🛵</span><small>F</small></div>
+          <div class="drv-marker drv-marker--stalled" style="left:330px; top:470px;"><span>🛵</span><small>T</small></div>
+          <div class="drv-marker drv-marker--busy" style="left:720px; top:450px;"><span>🛵</span><small>C</small></div>
+          <div class="drv-marker drv-marker--free" style="left:150px; top:380px;"><span>🛵</span><small>P</small></div>
+          <div class="drv-marker drv-marker--off" style="left:560px; top:120px;"><span>🛵</span><small>M</small></div>
+        </div>
+
+        <!-- DRIVER LIST -->
+        <div class="drv-list">
+          <div class="drv-list__head">All drivers</div>
+
+          <div class="drv-item">
+            <div class="drv-item__av">B<span class="drv-dot drv-dot--busy"></span></div>
+            <div class="drv-item__body">
+              <strong>Blessing K.</strong>
+              <span>On #DAD-2046 · Mount Pleasant</span>
+            </div>
+            <span class="pill pill--info">On delivery</span>
+          </div>
+
+          <div class="drv-item">
+            <div class="drv-item__av">F<span class="drv-dot drv-dot--free"></span></div>
+            <div class="drv-item__body">
+              <strong>Farai M.</strong>
+              <span>Free · near CBD · 2.8 km out</span>
+            </div>
+            <span class="pill pill--ok">Free</span>
+          </div>
+
+          <div class="drv-item drv-item--alert">
+            <div class="drv-item__av">T<span class="drv-dot drv-dot--stalled"></span></div>
+            <div class="drv-item__body">
+              <strong>Tapiwa Moyo</strong>
+              <span>On #DAD-2048 · no movement 18 min</span>
+            </div>
+            <span class="pill pill--alert">Stalled</span>
+          </div>
+
+          <div class="drv-item">
+            <div class="drv-item__av">C<span class="drv-dot drv-dot--busy"></span></div>
+            <div class="drv-item__body">
+              <strong>Chipo N.</strong>
+              <span>On #DAD-2043 · Highlands</span>
+            </div>
+            <span class="pill pill--info">On delivery</span>
+          </div>
+
+          <div class="drv-item">
+            <div class="drv-item__av">P<span class="drv-dot drv-dot--free"></span></div>
+            <div class="drv-item__body">
+              <strong>Panashe D.</strong>
+              <span>Free · Avenues · 1.9 km out</span>
+            </div>
+            <span class="pill pill--ok">Free</span>
+          </div>
+
+          <div class="drv-item drv-item--off">
+            <div class="drv-item__av">M<span class="drv-dot drv-dot--off"></span></div>
+            <div class="drv-item__body">
+              <strong>Munya S.</strong>
+              <span>Off shift · last seen 12:40</span>
+            </div>
+            <span class="pill">Off</span>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+</body>
+</html>
