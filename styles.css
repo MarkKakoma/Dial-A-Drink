@@ -691,6 +691,46 @@ ul, ol { list-style: none; }
 .cr-txn__amt--in  { color: var(--ok); }
 .cr-txn__amt--out { color: var(--muted); }
 
+/* ---------- 7j. BUY A ROUND ---------- */
+.bar-intro { display: flex; gap: 12px; align-items: flex-start; padding: 16px 18px; background: var(--warn-bg); }
+.bar-intro__icon { font-size: 1.8rem; flex: none; }
+.bar-intro p { font-size: .86rem; color: #6b4e1f; line-height: 1.5; }
+
+.bar-field {
+  display: flex; align-items: center; gap: 10px;
+  border: 1.5px solid var(--line); border-radius: 12px; background: var(--white);
+  padding: 12px 14px; margin-bottom: 10px;
+}
+.bar-field__flag { font-size: .9rem; font-weight: 600; color: var(--brown); white-space: nowrap; }
+.bar-field input { border: none; outline: none; background: transparent; flex: 1; font-family: inherit; font-size: 1rem; color: var(--ink); }
+
+.bar-picks { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+.bar-pick {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 2px;
+  padding: 12px; border: 1.5px solid var(--line); border-radius: 12px; background: var(--white); text-align: left;
+}
+.bar-pick__img { font-size: 1.6rem; }
+.bar-pick__name { font-size: .82rem; font-weight: 600; color: var(--ink); line-height: 1.25; }
+.bar-pick__price { font-size: .82rem; font-weight: 600; color: var(--gold); }
+.bar-pick.is-active { border-color: var(--gold); background: var(--warn-bg); }
+
+.bar-msg {
+  width: 100%; min-height: 70px; resize: none;
+  border: 1.5px solid var(--line); border-radius: 12px; background: var(--white);
+  padding: 12px 14px; font-family: inherit; font-size: .92rem; color: var(--ink); outline: none;
+}
+.bar-msg:focus { border-color: var(--gold); }
+
+.bar-preview {
+  border: 1.5px dashed var(--gold); border-radius: var(--radius);
+  background: var(--cream); padding: 16px;
+}
+.bar-preview__head { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+.bar-preview__gift { font-size: 1.8rem; }
+.bar-preview__head strong { display: block; font-size: .95rem; color: var(--brown); }
+.bar-preview__head span { font-size: .82rem; color: var(--muted); }
+.bar-preview__msg { font-style: italic; font-size: .9rem; color: var(--ink); background: var(--white); border-radius: 10px; padding: 10px 12px; }
+
 /* ---------- 9. UTILITIES & RESPONSIVE ---------- */
 .pad   { padding: 18px; }
 .stack { display: flex; flex-direction: column; }

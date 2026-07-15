@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dial A Drink — Buy A Round</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <div class="stage">
+    <div class="phone">
+      <div class="phone__notch"></div>
+      <div class="phone__screen">
+
+        <div class="statusbar">
+          <span>9:41</span>
+          <span class="statusbar__icons"><span>📶</span><span>🔋</span></span>
+        </div>
+
+        <header class="appbar">
+          <a href="home.html" class="appbar__back">‹</a>
+          <span class="appbar__title">Buy A Round</span>
+        </header>
+
+        <div class="screen">
+
+          <!-- intro -->
+          <div class="bar-intro">
+            <div class="bar-intro__icon">🥂</div>
+            <p>Send a drink to someone. We'll text them a link to claim it and arrange their own delivery — no need to know their address.</p>
+          </div>
+
+          <!-- recipient -->
+          <div class="co-sec">
+            <div class="co-sec__label">Send to</div>
+            <div class="bar-field">
+              <span class="bar-field__flag">🇿🇼 +263</span>
+              <input type="tel" placeholder="77 123 4567" value="77 234 9910" />
+            </div>
+            <div class="co-sublabel" style="margin-bottom:0;">We'll only use this number to send the gift. No contacts are synced.</div>
+          </div>
+
+          <!-- pick a drink -->
+          <div class="co-sec">
+            <div class="co-sec__label">Choose a drink</div>
+            <div class="bar-picks" id="picks"></div>
+            <a href="catalogue.html" class="co-add">Browse full catalogue →</a>
+          </div>
+
+          <!-- message -->
+          <div class="co-sec">
+            <div class="co-sec__label">Add a message</div>
+            <textarea class="bar-msg" maxlength="140" placeholder="Cheers to you! 🍻">Congrats on the new job — this one's on me! 🎉</textarea>
+          </div>
+
+          <!-- preview -->
+          <div class="co-sec">
+            <div class="co-sec__label">They'll receive</div>
+            <div class="bar-preview">
+              <div class="bar-preview__head">
+                <span class="bar-preview__gift">🎁</span>
+                <div>
+                  <strong>A round from Tapiwa</strong>
+                  <span id="prevDrink">Jameson Irish Whisky · $30.00</span>
+                </div>
+              </div>
+              <p class="bar-preview__msg" id="prevMsg">"Congrats on the new job — this one's on me! 🎉"</p>
+            </div>
+          </div>
+
+          <div style="height:96px;"></div>
+        </div>
+
+        <!-- sticky send -->
+        <div class="pd__bar">
+          <div class="pd__bar-total">
+            <span>Total</span>
+            <strong id="total">$30.00</strong>
+          </div>
+          <a href="tracking.html" class="btn btn--gold" style="width:auto; padding-left:26px; padding-right:26px;">Send the round</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="products.js"></script>
+  <script>
+    // a curated set of giftable picks
+    const PICK_IDS = ['p001','p035','p029','p085','p013','p021'];
+    let selected = 'p001';
+
+    const picksEl = document.getElementById('picks');
+    function render() {
+      picksEl.innerHTML = PICK_IDS.map(id => {
+        const p = byId(id); if(!p) return '';
+        return `<button class="bar-pick ${id===selected?'is-active':''}" data-id="${id}">
+          <span class="bar-pick__img">${p.emoji}</span>
+          <span class="bar-pick__name">${p.name}</span>
+          <span class="bar-pick__price">${money(p.price)}</span>
+        </button>`;
+      }).join('');
+      picksEl.querySelectorAll('.bar-pick').forEach(b =>
+        b.addEventListener('click', () => { selected = b.dataset.id; render(); updatePreview(); })
+      );
+    }
+    function updatePreview() {
+      const p = byId(selected);
+      document.getElementById('prevDrink').textContent = `${p.name} · ${money(p.price)}`;
+      document.getElementById('total').textContent = money(p.price);
+    }
+    render();
+    updatePreview();
+  </script>
+</body>
+</html>
