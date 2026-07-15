@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dial A Drink — Payment methods</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <div class="stage">
+    <div class="phone">
+      <div class="phone__notch"></div>
+      <div class="phone__screen">
+
+        <div class="statusbar">
+          <span>9:41</span>
+          <span class="statusbar__icons"><span>📶</span><span>🔋</span></span>
+        </div>
+
+        <header class="appbar">
+          <a href="account.html" class="appbar__back">‹</a>
+          <span class="appbar__title">Payment methods</span>
+        </header>
+
+        <div class="screen screen--hasbar">
+
+          <!-- saved methods -->
+          <div class="section-label">Saved methods</div>
+
+          <div class="pay-card">
+            <div class="pay-card__icon pay-card__icon--eco">📱</div>
+            <div class="pay-card__body">
+              <div class="pay-card__name">EcoCash</div>
+              <div class="pay-card__sub">+263 77 234 9910</div>
+            </div>
+            <span class="pay-card__default">Default</span>
+          </div>
+
+          <div class="pay-card">
+            <div class="pay-card__icon pay-card__icon--visa">💳</div>
+            <div class="pay-card__body">
+              <div class="pay-card__name">Visa ···· 4821</div>
+              <div class="pay-card__sub">Expires 08/27</div>
+            </div>
+            <button class="pay-card__menu">⋯</button>
+          </div>
+
+          <div class="pay-card">
+            <div class="pay-card__icon pay-card__icon--mc">💳</div>
+            <div class="pay-card__body">
+              <div class="pay-card__name">Mastercard ···· 6033</div>
+              <div class="pay-card__sub">Expires 02/26</div>
+            </div>
+            <button class="pay-card__menu">⋯</button>
+          </div>
+
+          <!-- add -->
+          <div class="pad">
+            <button class="pay-add">
+              <span>＋</span> Add payment method
+            </button>
+          </div>
+
+          <!-- always available -->
+          <div class="section-label">Always available at checkout</div>
+          <div class="pay-note">
+            <div class="pay-note__row"><span>💵</span> Cash on delivery</div>
+            <div class="pay-note__row"><span>🎁</span> Store credit balance</div>
+          </div>
+
+        </div>
+
+        <!-- sticky save -->
+        <div class="pd__bar">
+          <a href="account.html" class="btn btn--gold">Done</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>

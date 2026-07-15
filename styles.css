@@ -765,6 +765,33 @@ ul, ol { list-style: none; }
 .acc-foot span { font-size: .74rem; color: var(--muted); }
 .acc-foot__age { color: var(--gold); margin-top: 6px; }
 
+/* ---------- 7l. PAYMENT METHODS ---------- */
+.pay-card {
+  display: flex; align-items: center; gap: 12px;
+  margin: 0 18px 10px; padding: 14px 16px;
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
+}
+.pay-card__icon { width: 44px; height: 44px; border-radius: 10px; flex: none; display: grid; place-items: center; font-size: 1.3rem; }
+.pay-card__icon--eco  { background: #e4f0e7; }
+.pay-card__icon--visa { background: #e1ecf5; }
+.pay-card__icon--mc   { background: var(--warn-bg); }
+.pay-card__body { flex: 1; }
+.pay-card__name { font-weight: 600; font-size: .92rem; }
+.pay-card__sub { font-size: .8rem; color: var(--muted); }
+.pay-card__default { font-size: .68rem; font-weight: 700; color: var(--ok); background: var(--ok-bg); padding: 4px 10px; border-radius: 999px; text-transform: uppercase; letter-spacing: .04em; }
+.pay-card__menu { border: none; background: transparent; font-size: 1.3rem; color: var(--muted); padding: 0 6px; }
+
+.pay-add {
+  width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 14px; border: 1.5px dashed var(--gold); border-radius: 12px;
+  background: var(--warn-bg); color: var(--gold); font-weight: 600; font-size: .92rem;
+}
+.pay-add span { font-size: 1.2rem; }
+
+.pay-note { margin: 0 18px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.pay-note__row { display: flex; align-items: center; gap: 12px; padding: 14px 16px; font-size: .9rem; font-weight: 500; color: var(--ink); border-bottom: 1px solid var(--line); }
+.pay-note__row:last-child { border-bottom: none; }
+
 /* ---------- 9. UTILITIES & RESPONSIVE ---------- */
 /* clears fixed .pd__bar so last content isn't hidden behind it */
 .screen--hasbar { padding-bottom: 92px; }
