@@ -960,6 +960,30 @@ ul, ol { list-style: none; }
 .toggle__knob { width: 20px; height: 20px; border-radius: 50%; background: #fff; transition: transform .18s; box-shadow: 0 1px 3px rgba(0,0,0,.2); }
 .toggle.is-on .toggle__knob { transform: translateX(20px); }
 
+/* ---------- 8e. ADMIN PHONE APP ---------- */
+.aadmin-bar { flex: none; background: var(--brown); color: var(--cream); padding: 10px 18px 16px; }
+.aadmin-bar__row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.aadmin-bar__logo { height: 28px; width: auto; filter: brightness(0) invert(1); opacity: .95; }
+.aadmin-bar__badge { font-size: .7rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; background: rgba(255,255,255,.15); padding: 4px 10px; border-radius: 999px; }
+.aadmin-bar__stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; }
+.aadmin-stat { background: rgba(255,255,255,.1); border-radius: 10px; padding: 8px 6px; text-align: center; }
+.aadmin-stat strong { display: block; font-family: var(--font-display); font-weight: 600; font-size: 1.3rem; }
+.aadmin-stat span { display: block; font-size: .62rem; opacity: .85; }
+.aadmin-stat--alert { background: rgba(180,64,42,.4); }
+
+.aadmin-alert { display: flex; align-items: center; gap: 10px; margin: 14px 18px 4px; padding: 12px 14px; background: var(--alert-bg); border-radius: 12px; }
+.aadmin-alert strong { display: block; font-size: .88rem; color: var(--alert); }
+.aadmin-alert span { font-size: .78rem; color: #7a3a2c; }
+
+.aord { margin: 0 18px 10px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; }
+.aord--alert { border-color: #eccfc7; background: var(--alert-bg); }
+.aord__top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+.aord__id { font-weight: 700; font-size: .88rem; color: var(--brown); }
+.aord__cust { font-size: .84rem; color: var(--muted); margin-bottom: 12px; }
+.aord__foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.aord__driver { font-size: .82rem; font-weight: 600; color: var(--ink); }
+.aord__ok { font-size: .8rem; font-weight: 600; color: var(--ok); }
+
 /* ---------- 9. UTILITIES & RESPONSIVE ---------- */
 /* clears fixed .pd__bar so last content isn't hidden behind it */
 .screen--hasbar { padding-bottom: 92px; }

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dial A Drink — Admin app · Orders</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+</head>
+<body>
+  <div class="stage">
+    <div class="phone">
+      <div class="phone__notch"></div>
+      <div class="phone__screen">
+
+        <div class="statusbar">
+          <span>9:41</span>
+          <span class="statusbar__icons"><span>📶</span><span>🔋</span></span>
+        </div>
+
+        <!-- admin app bar -->
+        <header class="aadmin-bar">
+          <div class="aadmin-bar__row">
+            <img src="../../assets/logo.png" alt="Dial A Drink" class="aadmin-bar__logo" />
+            <span class="aadmin-bar__badge">Operations</span>
+          </div>
+          <div class="aadmin-bar__stats">
+            <div class="aadmin-stat"><strong>5</strong><span>New</span></div>
+            <div class="aadmin-stat"><strong>3</strong><span>Assigned</span></div>
+            <div class="aadmin-stat"><strong>4</strong><span>In transit</span></div>
+            <div class="aadmin-stat aadmin-stat--alert"><strong>1</strong><span>Stalled</span></div>
+          </div>
+        </header>
+
+        <div class="screen">
+
+          <div class="aadmin-alert">
+            <span>⚠️</span>
+            <div><strong>1 order stalled</strong><span>#DAD-2048 · no movement 18 min</span></div>
+          </div>
+
+          <div class="section-label">Live queue</div>
+
+          <!-- stalled -->
+          <div class="aord aord--alert">
+            <div class="aord__top">
+              <span class="aord__id">#DAD-2048</span>
+              <span class="pill pill--alert"><span class="pill__dot"></span>Stalled</span>
+            </div>
+            <div class="aord__cust">T. Moyo · Belgravia · $63.50</div>
+            <div class="aord__foot">
+              <span class="aord__driver">🛵 James Moyo · stalled</span>
+              <button class="btn btn--gold btn--sm">Reassign</button>
+            </div>
+          </div>
+
+          <!-- new orders needing assignment -->
+          <div class="aord">
+            <div class="aord__top">
+              <span class="aord__id">#DAD-2045</span>
+              <span class="pill"><span class="pill__dot"></span>New</span>
+            </div>
+            <div class="aord__cust">P. Sibanda · Borrowdale · $41.00</div>
+            <div class="aord__foot">
+              <span class="aord__driver">Unassigned</span>
+              <button class="btn btn--gold btn--sm">Assign</button>
+            </div>
+          </div>
+
+          <div class="aord">
+            <div class="aord__top">
+              <span class="aord__id">#DAD-2044</span>
+              <span class="pill"><span class="pill__dot"></span>New</span>
+            </div>
+            <div class="aord__cust">L. Chikowore · CBD · $18.00</div>
+            <div class="aord__foot">
+              <span class="aord__driver">Unassigned</span>
+              <button class="btn btn--gold btn--sm">Assign</button>
+            </div>
+          </div>
+
+          <div class="aord">
+            <div class="aord__top">
+              <span class="aord__id">#DAD-2046</span>
+              <span class="pill pill--warn"><span class="pill__dot"></span>Assigned</span>
+            </div>
+            <div class="aord__cust">K. Dube · Mount Pleasant · $115.00</div>
+            <div class="aord__foot">
+              <span class="aord__driver">🛵 Blessing K.</span>
+              <span class="aord__ok">✓ On the way</span>
+            </div>
+          </div>
+
+          <div class="aord">
+            <div class="aord__top">
+              <span class="aord__id">#DAD-2047</span>
+              <span class="pill pill--info"><span class="pill__dot"></span>In transit</span>
+            </div>
+            <div class="aord__cust">R. Ncube · Avondale · $22.50</div>
+            <div class="aord__foot">
+              <span class="aord__driver">🛵 Chipo N.</span>
+              <span class="aord__ok">✓ 6 min away</span>
+            </div>
+          </div>
+
+          <div style="height:16px;"></div>
+        </div>
+
+        <!-- admin bottom nav (only orders + drivers) -->
+        <nav class="tabbar">
+          <a href="orders.html" class="is-active"><span class="ico">📋</span>Orders</a>
+          <a href="drivers.html"><span class="ico">🛵</span>Drivers</a>
+          <a href="../desktop/orders.html"><span class="ico">🖥️</span>Desktop</a>
+        </nav>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
