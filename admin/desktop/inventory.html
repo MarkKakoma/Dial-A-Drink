@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dial A Drink — Admin · Inventory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+</head>
+<body>
+  <div class="admin-shell">
+
+    <!-- SIDEBAR -->
+    <aside class="admin-side">
+      <img src="../../assets/logo-light.png" alt="Dial A Drink" class="admin-side__logo" />
+      <nav class="admin-nav">
+        <a href="orders.html"><span class="admin-nav__icon">📋</span>Orders</a>
+        <a href="drivers.html"><span class="admin-nav__icon">🛵</span>Drivers</a>
+        <a href="reconciliation.html"><span class="admin-nav__icon">💰</span>Reconciliation</a>
+        <a href="inventory.html" class="is-active"><span class="admin-nav__icon">📦</span>Inventory</a>
+      </nav>
+      <div class="admin-side__foot">
+        Signed in as Operations<br />Harare · 15 Jul 2026
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="admin-main">
+      <div class="admin-head">
+        <div>
+          <h1>Inventory</h1>
+          <div class="admin-head__sub">126 products · updated 14:07</div>
+        </div>
+        <button class="btn btn--gold btn--sm">Add product</button>
+      </div>
+
+      <div class="admin-content">
+
+        <!-- summary tiles -->
+        <div class="stat-row" style="grid-template-columns:repeat(4,1fr);">
+          <div class="stat"><span class="stat__num">126</span><span class="stat__label">Total products</span></div>
+          <div class="stat"><span class="stat__num">118</span><span class="stat__label">In stock</span></div>
+          <div class="stat stat--alert"><span class="stat__num">8</span><span class="stat__label">Out of stock</span></div>
+          <div class="stat"><span class="stat__num">6</span><span class="stat__label">Low stock</span></div>
+        </div>
+
+        <!-- controls -->
+        <div class="inv-controls">
+          <div class="cat-search" style="max-width:280px; margin:0;">
+            <span>🔍</span>
+            <input type="text" id="search" placeholder="Search products…" />
+          </div>
+          <select id="catFilter" class="inv-select"></select>
+        </div>
+
+        <!-- table -->
+        <div class="recon-wrap">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Category</th>
+                <th>Size</th>
+                <th class="num">Price</th>
+                <th class="num">Stock</th>
+                <th class="num">Status</th>
+                <th class="num">In stock</th>
+              </tr>
+            </thead>
+            <tbody id="invBody"></tbody>
+          </table>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <script src="../../app/products.js"></script>
+  <script>
+    // assign pseudo-random but stable stock levels per product
+    function stockFor(i){
+      const seq = [24, 12, 0, 48, 6, 30, 3, 60, 18, 0, 9, 40];
+      return seq[i % seq.length];
+    }
+
+    const body = document.getElementById('invBody');
+    const search = document.getElementById('search');
+    const catFilter = document.getElementById('catFilter');
+
+    // populate category filter
+    catFilter.innerHTML = '<option value="All">All categories</option>' +
+      CATEGORIES.map(c => `<option value="${c.name}">${c.name}</option>`).join('');
+
+    function statusOf(stock){
+      if (stock === 0) return {cls:'pill--alert', txt:'Out of stock'};
+      if (stock <= 6) return {cls:'pill--warn', txt:'Low stock'};
+      return {cls:'pill--ok', txt:'In stock'};
+    }
+
+    function render(){
+      const q = (search.value||'').toLowerCase();
+      const cat = catFilter.value;
+      let items = PRODUCTS.map((p,i)=>({...p, stock: stockFor(i)}));
+      if (cat !== 'All') items = items.filter(p=>p.cat===cat);
+      if (q) items = items.filter(p=>p.name.toLowerCase().includes(q));
+
+      body.innerHTML = items.slice(0, 60).map(p=>{
+        const s = statusOf(p.stock);
+        const on = p.stock > 0;
+        return `<tr>
+          <td><span class="inv-prod">${p.emoji} ${p.name}</span></td>
+          <td>${p.cat}</td>
+          <td>${p.size}</td>
+          <td class="num">${money(p.price)}</td>
+          <td class="num">${p.stock}</td>
+          <td class="num"><span class="pill ${s.cls}"><span class="pill__dot"></span>${s.txt}</span></td>
+          <td class="num"><span class="toggle ${on?'is-on':''}" onclick="this.classList.toggle('is-on')"><span class="toggle__knob"></span></span></td>
+        </tr>`;
+      }).join('');
+    }
+
+    search.addEventListener('input', render);
+    catFilter.addEventListener('change', render);
+    render();
+  </script>
+</body>
+</html>
