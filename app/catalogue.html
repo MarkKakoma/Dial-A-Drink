@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dial A Drink — Catalogue</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <div class="stage">
+    <div class="phone">
+      <div class="phone__notch"></div>
+      <div class="phone__screen">
+
+        <!-- status bar -->
+        <div class="statusbar">
+          <span>9:41</span>
+          <span class="statusbar__icons"><span>📶</span><span>🔋</span></span>
+        </div>
+
+        <!-- app bar with search -->
+        <header class="cat-head">
+          <div class="cat-head__row">
+            <a href="home.html" class="appbar__back">‹</a>
+            <span class="appbar__title">Catalogue</span>
+            <a href="cart.html" class="cat-head__cart">🛒<span class="cat-head__badge">3</span></a>
+          </div>
+          <div class="cat-search">
+            <span>🔍</span>
+            <input type="text" id="search" placeholder="Search drinks…" />
+          </div>
+        </header>
+
+        <!-- category chip strip -->
+        <nav class="chips" id="chips"></nav>
+
+        <!-- product grid -->
+        <div class="screen" id="screen">
+          <div class="grid" id="grid"></div>
+          <div style="height:16px;"></div>
+        </div>
+
+        <!-- bottom tab bar -->
+        <nav class="tabbar">
+          <a href="home.html"><span class="ico">🏠</span>Home</a>
+          <a href="catalogue.html" class="is-active"><span class="ico">🍾</span>Shop</a>
+          <a href="orders.html"><span class="ico">🧾</span>Orders</a>
+          <a href="credit.html"><span class="ico">💳</span>Credit</a>
+          <a href="account.html"><span class="ico">👤</span>Account</a>
+        </nav>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="products.js"></script>
+  <script>
+    const chipsEl = document.getElementById('chips');
+    const gridEl  = document.getElementById('grid');
+    const searchEl= document.getElementById('search');
+    let activeCat = 'All';
+
+    // build chips
+    function renderChips() {
+      const all = [{name:'All', emoji:'✨'}, ...CATEGORIES];
+      chipsEl.innerHTML = all.map(c =>
+        `<button class="chip ${c.name===activeCat?'is-active':''}" data-cat="${c.name}">
+           <span>${c.emoji}</span>${c.name}
+         </button>`
+      ).join('');
+      chipsEl.querySelectorAll('.chip').forEach(b =>
+        b.addEventListener('click', () => { activeCat = b.dataset.cat; renderChips(); renderGrid(); })
+      );
+    }
+
+    // build grid
+    function renderGrid() {
+      const q = (searchEl.value || '').toLowerCase();
+      let items = PRODUCTS;
+      if (activeCat !== 'All') items = items.filter(p => p.cat === activeCat);
+      if (q) items = items.filter(p => p.name.toLowerCase().includes(q) || p.cat.toLowerCase().includes(q));
+
+      if (!items.length) {
+        gridEl.innerHTML = `<div class="grid-empty">No drinks match “${searchEl.value}”. Try another search.</div>`;
+        return;
+      }
+      gridEl.innerHTML = items.map(p => `
+        <a class="pcard" href="product.html?id=${p.id}">
+          <div class="pcard__img">${p.emoji}</div>
+          <div class="pcard__body">
+            <div class="pcard__name">${p.name}</div>
+            <div class="pcard__size">${p.size}</div>
+            <div class="pcard__foot">
+              <span class="pcard__price">${money(p.price)}</span>
+              <span class="pcard__add">+</span>
+            </div>
+          </div>
+        </a>
+      `).join('');
+    }
+
+    searchEl.addEventListener('input', renderGrid);
+    renderChips();
+    renderGrid();
+  </script>
+</body>
+</html>
