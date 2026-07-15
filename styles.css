@@ -819,15 +819,17 @@ ul, ol { list-style: none; }
 .help-contact__body span { font-size: .8rem; color: var(--muted); }
 .help-contact__go { font-size: 1.3rem; color: var(--line); }
 
-.faq { margin: 0 18px 8px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.faq { margin: 0 18px 8px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); }
 .faq summary {
   list-style: none; cursor: pointer;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 14px 16px; font-weight: 600; font-size: .9rem; color: var(--brown);
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 15px 16px; font-weight: 600; font-size: .9rem; color: var(--brown);
+  line-height: 1.4;
 }
 .faq summary::-webkit-details-marker { display: none; }
-.faq__chev { transition: transform .2s; color: var(--gold); font-size: 1.1rem; }
+.faq__chev { transition: transform .2s; color: var(--gold); font-size: 1.1rem; flex: none; line-height: 1; }
 .faq[open] .faq__chev { transform: rotate(180deg); }
+.faq[open] summary { padding-bottom: 6px; }
 .faq p { padding: 0 16px 16px; font-size: .86rem; color: var(--ink); line-height: 1.55; }
 
 /* ---------- 9. UTILITIES & RESPONSIVE ---------- */
