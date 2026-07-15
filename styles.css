@@ -653,6 +653,44 @@ ul, ol { list-style: none; }
 .od-line__k { color: var(--muted); flex: none; }
 .od-line__v { text-align: right; color: var(--ink); font-weight: 500; }
 
+/* ---------- 7i. STORE CREDIT ---------- */
+.cr-balance {
+  margin: 16px 18px; padding: 26px 22px;
+  background: linear-gradient(160deg, var(--brown), #431a0b);
+  border-radius: var(--radius-lg); color: var(--cream);
+  display: flex; flex-direction: column; position: relative; overflow: hidden;
+}
+.cr-balance::after {
+  content: ""; position: absolute; right: -50px; top: -50px;
+  width: 160px; height: 160px; border-radius: 50%;
+  border: 2px solid rgba(199,154,42,.3);
+}
+.cr-balance__label { font-size: .74rem; letter-spacing: .08em; text-transform: uppercase; opacity: .8; }
+.cr-balance__amount { font-family: var(--font-display); font-weight: 600; font-size: 3rem; line-height: 1.1; margin: 6px 0; }
+.cr-balance__note { font-size: .82rem; opacity: .78; }
+
+.cr-explain {
+  display: flex; gap: 10px; margin: 0 18px 8px; padding: 14px;
+  background: var(--info-bg); border-radius: 12px;
+}
+.cr-explain__icon { font-size: 1rem; flex: none; }
+.cr-explain p { font-size: .8rem; color: #33506b; line-height: 1.5; }
+
+.cr-txn { display: flex; align-items: center; gap: 12px; padding: 12px 18px; border-bottom: 1px solid var(--line); }
+.cr-txn__icon {
+  width: 38px; height: 38px; border-radius: 50%; flex: none;
+  display: grid; place-items: center; font-size: 1rem; font-weight: 700;
+}
+.cr-txn__icon--in    { background: var(--ok-bg); color: var(--ok); }
+.cr-txn__icon--out   { background: var(--cream-deep); color: var(--muted); }
+.cr-txn__icon--promo { background: var(--warn-bg); color: var(--gold); }
+.cr-txn__body { flex: 1; }
+.cr-txn__desc { font-weight: 600; font-size: .9rem; }
+.cr-txn__meta { font-size: .78rem; color: var(--muted); }
+.cr-txn__amt { font-weight: 600; font-size: .95rem; font-variant-numeric: tabular-nums; }
+.cr-txn__amt--in  { color: var(--ok); }
+.cr-txn__amt--out { color: var(--muted); }
+
 /* ---------- 9. UTILITIES & RESPONSIVE ---------- */
 .pad   { padding: 18px; }
 .stack { display: flex; flex-direction: column; }

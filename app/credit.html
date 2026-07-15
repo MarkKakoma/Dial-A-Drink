@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dial A Drink — Store credit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <div class="stage">
+    <div class="phone">
+      <div class="phone__notch"></div>
+      <div class="phone__screen">
+
+        <div class="statusbar">
+          <span>9:41</span>
+          <span class="statusbar__icons"><span>📶</span><span>🔋</span></span>
+        </div>
+
+        <header class="appbar">
+          <a href="home.html" class="appbar__back">‹</a>
+          <span class="appbar__title">Store credit</span>
+        </header>
+
+        <div class="screen">
+
+          <!-- balance card -->
+          <div class="cr-balance">
+            <span class="cr-balance__label">Available balance</span>
+            <span class="cr-balance__amount">$4.50</span>
+            <span class="cr-balance__note">Use it towards any order at checkout</span>
+          </div>
+
+          <!-- what store credit is -->
+          <div class="cr-explain">
+            <span class="cr-explain__icon">ℹ️</span>
+            <p>Store credit is earned from change on cash orders and promotions. It can be spent with Dial A Drink and cannot be transferred or withdrawn as cash.</p>
+          </div>
+
+          <!-- transactions -->
+          <div class="section-label">History</div>
+
+          <div class="cr-txn">
+            <div class="cr-txn__icon cr-txn__icon--in">↓</div>
+            <div class="cr-txn__body">
+              <div class="cr-txn__desc">Change from cash order</div>
+              <div class="cr-txn__meta">14 Jul · Order #DAD-2041</div>
+            </div>
+            <div class="cr-txn__amt cr-txn__amt--in">+$1.50</div>
+          </div>
+
+          <div class="cr-txn">
+            <div class="cr-txn__icon cr-txn__icon--out">↑</div>
+            <div class="cr-txn__body">
+              <div class="cr-txn__desc">Applied to order</div>
+              <div class="cr-txn__meta">14 Jul · Order #DAD-2048</div>
+            </div>
+            <div class="cr-txn__amt cr-txn__amt--out">−$4.50</div>
+          </div>
+
+          <div class="cr-txn">
+            <div class="cr-txn__icon cr-txn__icon--promo">★</div>
+            <div class="cr-txn__body">
+              <div class="cr-txn__desc">Welcome promotion</div>
+              <div class="cr-txn__meta">9 Jul · Promo WELCOME5</div>
+            </div>
+            <div class="cr-txn__amt cr-txn__amt--in">+$5.00</div>
+          </div>
+
+          <div class="cr-txn">
+            <div class="cr-txn__icon cr-txn__icon--in">↓</div>
+            <div class="cr-txn__body">
+              <div class="cr-txn__desc">Change from cash order</div>
+              <div class="cr-txn__meta">9 Jul · Order #DAD-2033</div>
+            </div>
+            <div class="cr-txn__amt cr-txn__amt--in">+$2.50</div>
+          </div>
+
+          <div class="cr-txn">
+            <div class="cr-txn__icon cr-txn__icon--out">↑</div>
+            <div class="cr-txn__body">
+              <div class="cr-txn__desc">Applied to order</div>
+              <div class="cr-txn__meta">2 Jul · Order #DAD-2019</div>
+            </div>
+            <div class="cr-txn__amt cr-txn__amt--out">−$3.00</div>
+          </div>
+
+          <div style="height:16px;"></div>
+        </div>
+
+        <nav class="tabbar">
+          <a href="home.html"><span class="ico">🏠</span>Home</a>
+          <a href="catalogue.html"><span class="ico">🍾</span>Shop</a>
+          <a href="orders.html"><span class="ico">🧾</span>Orders</a>
+          <a href="credit.html" class="is-active"><span class="ico">💳</span>Credit</a>
+          <a href="account.html"><span class="ico">👤</span>Account</a>
+        </nav>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
