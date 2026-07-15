@@ -168,6 +168,7 @@ ul, ol { list-style: none; }
 .screen {
   flex: 1; overflow-y: auto;
   display: flex; flex-direction: column;
+  padding-bottom: 20px;
 }
 .screen::-webkit-scrollbar { width: 0; }
 
