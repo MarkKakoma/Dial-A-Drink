@@ -1078,6 +1078,69 @@ ul, ol { list-style: none; }
 
 .drvact-actions { margin-top: auto; }
 
+/* ---------- 8i. DRIVER APP — HOME / EARNINGS ---------- */
+.drvhome-head { flex: none; background: var(--brown); padding: 12px 18px 16px; }
+.drvhome-head__row { display: flex; align-items: center; justify-content: space-between; }
+.shift-toggle { display: flex; align-items: center; gap: 8px; }
+.shift-toggle__label { font-size: .8rem; font-weight: 600; color: var(--cream); }
+
+.earn-card { margin: 16px 18px; padding: 20px; background: linear-gradient(160deg, #2c8a52, #1f6b3f); border-radius: var(--radius-lg); color: #fff; }
+.earn-card__top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 18px; }
+.earn-card__label { display: block; font-size: .74rem; letter-spacing: .06em; text-transform: uppercase; opacity: .85; }
+.earn-card__amount { display: block; font-family: var(--font-display); font-weight: 600; font-size: 2.6rem; line-height: 1.1; }
+.earn-card__badge { font-size: .68rem; font-weight: 600; background: rgba(255,255,255,.2); padding: 4px 10px; border-radius: 999px; }
+.earn-card__split { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 18px; }
+.earn-card__split div { background: rgba(255,255,255,.12); border-radius: 10px; padding: 12px; }
+.earn-card__split span { display: block; font-size: .72rem; opacity: .85; }
+.earn-card__split strong { display: block; font-family: var(--font-display); font-weight: 600; font-size: 1.3rem; }
+.earn-card .btn--gold { background: #fff; color: #1f6b3f; }
+.earn-card .btn--gold:hover { background: var(--cream); }
+
+.drvstat-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; padding: 0 18px; }
+.drvstat { background: var(--white); border: 1px solid var(--line); border-radius: 12px; padding: 12px 6px; text-align: center; }
+.drvstat strong { display: block; font-family: var(--font-display); font-weight: 600; font-size: 1.2rem; color: var(--brown); }
+.drvstat span { font-size: .64rem; color: var(--muted); }
+
+.drvhome-job { display: flex; align-items: center; gap: 12px; margin: 0 18px; padding: 14px 16px; background: var(--warn-bg); border: 1px solid #eaddc0; border-radius: 12px; }
+.drvhome-job__icon { font-size: 1.5rem; }
+.drvhome-job__body { flex: 1; }
+.drvhome-job__body strong { display: block; font-size: .9rem; color: var(--brown); }
+.drvhome-job__body span { font-size: .8rem; color: var(--muted); }
+.drvhome-job__go { font-size: 1.3rem; color: var(--gold); }
+
+.drvhome-row { display: flex; align-items: center; gap: 12px; margin: 0 18px 10px; padding: 14px 16px; background: var(--white); border: 1px solid var(--line); border-radius: 12px; }
+.drvhome-row__icon { font-size: 1.2rem; width: 24px; text-align: center; }
+.drvhome-row__body { flex: 1; }
+.drvhome-row__body strong { display: block; font-size: .9rem; }
+.drvhome-row__body span { font-size: .78rem; color: var(--muted); }
+.drvhome-row__badge { background: var(--alert); color: #fff; font-size: .7rem; font-weight: 700; min-width: 20px; height: 20px; border-radius: 999px; display: grid; place-items: center; padding: 0 6px; }
+.drvhome-row__go { font-size: 1.3rem; color: var(--line); }
+
+.drvhome-recent { margin: 0 18px; background: var(--white); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.drvrec { display: flex; justify-content: space-between; padding: 12px 16px; border-bottom: 1px solid var(--line); font-size: .85rem; }
+.drvrec:last-child { border-bottom: none; }
+.drvrec span { color: var(--muted); }
+.drvrec strong { color: var(--ok); }
+
+/* bottom sheet (withdraw) */
+.sheet { position: absolute; inset: 0; z-index: 30; display: flex; align-items: flex-end; pointer-events: none; }
+.sheet::before { content: ""; position: absolute; inset: 0; background: rgba(42,26,18,.4); opacity: 0; transition: opacity .25s; }
+.sheet.is-open { pointer-events: auto; }
+.sheet.is-open::before { opacity: 1; }
+.sheet__panel { position: relative; width: 100%; background: var(--cream); border-radius: 24px 24px 34px 34px; padding: 12px 20px calc(20px + env(safe-area-inset-bottom)); transform: translateY(100%); transition: transform .25s ease; z-index: 2; }
+.sheet.is-open .sheet__panel { transform: translateY(0); }
+.sheet__handle { width: 40px; height: 4px; border-radius: 999px; background: var(--line); margin: 0 auto 16px; }
+.sheet__title { font-family: var(--font-display); font-weight: 600; font-size: 1.3rem; color: var(--brown); }
+.sheet__sub { font-size: .85rem; color: var(--muted); margin-bottom: 16px; }
+.wd-method { display: flex; align-items: center; gap: 12px; width: 100%; padding: 14px; margin-bottom: 10px; border: 1.5px solid var(--line); border-radius: 12px; background: var(--white); }
+.wd-method__icon { font-size: 1.3rem; }
+.wd-method__body { flex: 1; text-align: left; }
+.wd-method__body strong { display: block; font-size: .9rem; }
+.wd-method__body span { font-size: .78rem; color: var(--muted); }
+.wd-method.is-active { border-color: var(--gold); background: var(--warn-bg); }
+.wd-method.is-active .co-pay__radio { border-color: var(--gold); }
+.wd-method.is-active .co-pay__radio::after { content: ""; position: absolute; inset: 3px; border-radius: 50%; background: var(--gold); }
+
 /* ---------- 9. UTILITIES & RESPONSIVE ---------- */
 /* clears fixed .pd__bar so last content isn't hidden behind it */
 .screen--hasbar { padding-bottom: 92px; }

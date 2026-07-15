@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dial A Drink — Driver · Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <div class="stage">
+    <div class="phone">
+      <div class="phone__notch"></div>
+      <div class="phone__screen">
+
+        <div class="statusbar">
+          <span>9:41</span>
+          <span class="statusbar__icons"><span>📶</span><span>🔋</span></span>
+        </div>
+
+        <!-- header with online toggle -->
+        <header class="drvhome-head">
+          <div class="drvhome-head__row">
+            <div class="drvapp-bar__id">
+              <div class="drvapp-bar__av">B</div>
+              <div>
+                <strong style="color:var(--cream);">Blessing K.</strong>
+                <span style="color:rgba(251,248,240,.75);">Driver · ⭐ 4.9</span>
+              </div>
+            </div>
+            <label class="shift-toggle">
+              <span class="shift-toggle__label" id="shiftLabel">Online</span>
+              <span class="toggle is-on" id="shiftToggle" onclick="toggleShift()"><span class="toggle__knob"></span></span>
+            </label>
+          </div>
+        </header>
+
+        <div class="screen">
+
+          <!-- earnings card -->
+          <div class="earn-card" id="earnings">
+            <div class="earn-card__top">
+              <div>
+                <span class="earn-card__label">Available to withdraw</span>
+                <span class="earn-card__amount">$128.40</span>
+              </div>
+              <span class="earn-card__badge">Paid every Fri</span>
+            </div>
+            <div class="earn-card__split">
+              <div><span>This month</span><strong>$486.20</strong></div>
+              <div><span>Lifetime</span><strong>$7,940</strong></div>
+            </div>
+            <button class="btn btn--gold" onclick="document.getElementById('withdrawSheet').classList.add('is-open')">Withdraw earnings</button>
+          </div>
+
+          <!-- stats -->
+          <div class="section-label">Your stats</div>
+          <div class="drvstat-grid">
+            <div class="drvstat"><strong>4</strong><span>Jobs today</span></div>
+            <div class="drvstat"><strong>92</strong><span>This month</span></div>
+            <div class="drvstat"><strong>1,284</strong><span>Lifetime</span></div>
+            <div class="drvstat"><strong>98%</strong><span>Acceptance</span></div>
+          </div>
+
+          <!-- active/next job -->
+          <div class="section-label">Current job</div>
+          <a href="active.html" class="drvhome-job">
+            <span class="drvhome-job__icon">🛵</span>
+            <div class="drvhome-job__body">
+              <strong>#DAD-2048 · on the way</strong>
+              <span>12 Samora Machel Ave · $4.20</span>
+            </div>
+            <span class="drvhome-job__go">›</span>
+          </a>
+
+          <!-- admin messaging -->
+          <div class="section-label">Operations</div>
+          <a href="#" class="drvhome-row">
+            <span class="drvhome-row__icon">💬</span>
+            <div class="drvhome-row__body"><strong>Messages from ops</strong><span>2 unread</span></div>
+            <span class="drvhome-row__badge">2</span>
+          </a>
+          <a href="tel:+263" class="drvhome-row">
+            <span class="drvhome-row__icon">📞</span>
+            <div class="drvhome-row__body"><strong>Contact operations</strong><span>+263 242 700 900</span></div>
+            <span class="drvhome-row__go">›</span>
+          </a>
+
+          <!-- recent deliveries -->
+          <div class="section-label">Recent deliveries</div>
+          <div class="drvhome-recent">
+            <div class="drvrec"><span>#DAD-2041 · Avondale</span><strong>$3.80</strong></div>
+            <div class="drvrec"><span>#DAD-2038 · CBD</span><strong>$4.00</strong></div>
+            <div class="drvrec"><span>#DAD-2035 · Borrowdale</span><strong>$5.20</strong></div>
+          </div>
+
+          <div style="height:16px;"></div>
+        </div>
+
+        <!-- WITHDRAW SHEET -->
+        <div class="sheet" id="withdrawSheet">
+          <div class="sheet__panel">
+            <div class="sheet__handle"></div>
+            <h3 class="sheet__title">Withdraw $128.40</h3>
+            <p class="sheet__sub">Choose where to send your earnings</p>
+
+            <button class="wd-method is-active">
+              <span class="wd-method__icon">📱</span>
+              <div class="wd-method__body"><strong>EcoCash</strong><span>+263 77 234 9910 · instant</span></div>
+              <span class="co-pay__radio"></span>
+            </button>
+            <button class="wd-method">
+              <span class="wd-method__icon">🏦</span>
+              <div class="wd-method__body"><strong>Bank transfer</strong><span>CBZ ···· 4471 · 1–2 days</span></div>
+              <span class="co-pay__radio"></span>
+            </button>
+
+            <button class="btn btn--gold btn--lg" style="margin-top:16px;" onclick="document.getElementById('withdrawSheet').classList.remove('is-open')">Confirm withdrawal</button>
+            <button class="btn btn--ghost" style="margin-top:8px;" onclick="document.getElementById('withdrawSheet').classList.remove('is-open')">Cancel</button>
+          </div>
+        </div>
+
+        <!-- bottom nav -->
+        <nav class="tabbar">
+          <a href="home.html" class="is-active"><span class="ico">🏠</span>Home</a>
+          <a href="job.html"><span class="ico">🛵</span>Jobs</a>
+          <a href="#earnings"><span class="ico">💰</span>Earnings</a>
+        </nav>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleShift(){
+      const t = document.getElementById('shiftToggle');
+      const l = document.getElementById('shiftLabel');
+      t.classList.toggle('is-on');
+      l.textContent = t.classList.contains('is-on') ? 'Online' : 'Offline';
+    }
+  </script>
+</body>
+</html>
