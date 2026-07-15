@@ -928,6 +928,23 @@ ul, ol { list-style: none; }
 .drv-item__body strong { font-size: .9rem; }
 .drv-item__body span { font-size: .78rem; color: var(--muted); }
 
+/* ---------- 8c. ADMIN — RECONCILIATION ---------- */
+.recon-wrap { background: var(--white); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; margin-bottom: 18px; }
+.recon th, .recon td { white-space: nowrap; }
+.recon__driver { font-weight: 600; color: var(--brown); }
+.recon__flag td { background: var(--alert-bg); }
+.recon__flag:hover td { background: var(--alert-bg); }
+.recon tfoot td { font-weight: 700; color: var(--brown); border-top: 2px solid var(--line); background: var(--cream); }
+.diff { font-weight: 700; font-variant-numeric: tabular-nums; }
+.diff--ok { color: var(--muted); }
+.diff--alert { color: var(--alert); }
+
+.recon-note { display: flex; align-items: flex-start; gap: 14px; background: var(--alert-bg); border: 1px solid #eccfc7; border-radius: 12px; padding: 16px 18px; }
+.recon-note__icon { font-size: 1.4rem; flex: none; }
+.recon-note strong { display: block; font-size: .95rem; color: var(--alert); margin-bottom: 4px; }
+.recon-note p { font-size: .85rem; color: #7a3a2c; line-height: 1.5; }
+.recon-note .btn { flex: none; align-self: center; }
+
 /* ---------- 9. UTILITIES & RESPONSIVE ---------- */
 /* clears fixed .pd__bar so last content isn't hidden behind it */
 .screen--hasbar { padding-bottom: 92px; }
