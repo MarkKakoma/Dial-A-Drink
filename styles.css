@@ -807,6 +807,29 @@ ul, ol { list-style: none; }
 .addr-card__act { flex: 1; border: 1.5px solid var(--line); background: var(--white); border-radius: 10px; padding: 9px; font-size: .82rem; font-weight: 600; color: var(--brown); }
 .addr-card__act:hover { border-color: var(--gold); color: var(--gold); }
 
+/* ---------- 7n. HELP & SUPPORT ---------- */
+.help-contacts { padding: 0 18px; display: flex; flex-direction: column; gap: 10px; }
+.help-contact { display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); }
+.help-contact__icon { width: 42px; height: 42px; border-radius: 10px; flex: none; display: grid; place-items: center; font-size: 1.2rem; }
+.help-contact__icon--wa   { background: #e4f0e7; }
+.help-contact__icon--call { background: var(--warn-bg); }
+.help-contact__icon--mail { background: #e1ecf5; }
+.help-contact__body { flex: 1; display: flex; flex-direction: column; }
+.help-contact__body strong { font-size: .92rem; }
+.help-contact__body span { font-size: .8rem; color: var(--muted); }
+.help-contact__go { font-size: 1.3rem; color: var(--line); }
+
+.faq { margin: 0 18px 8px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.faq summary {
+  list-style: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 16px; font-weight: 600; font-size: .9rem; color: var(--brown);
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq__chev { transition: transform .2s; color: var(--gold); font-size: 1.1rem; }
+.faq[open] .faq__chev { transform: rotate(180deg); }
+.faq p { padding: 0 16px 16px; font-size: .86rem; color: var(--ink); line-height: 1.55; }
+
 /* ---------- 9. UTILITIES & RESPONSIVE ---------- */
 /* clears fixed .pd__bar so last content isn't hidden behind it */
 .screen--hasbar { padding-bottom: 92px; }
