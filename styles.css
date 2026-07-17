@@ -24,12 +24,12 @@
 
   /* ---- MOODY THEME: warm mid-dark stage, premium not murky ---- */
   /* surfaces (these drive most backgrounds) */
-  --cream:        #241c17;   /* app background — deep neutral-warm (less orange) */
-  --cream-deep:   #322820;   /* raised surface */
-  --ink:          #fbf6ee;   /* primary text — bright cream */
-  --muted:        #b8a794;   /* secondary text */
-  --line:         #4d3d30;   /* borders */
-  --white:        #302620;   /* card surface — clearly lifted from bg */
+  --cream:        #5a473c;   /* app background — brighter warm taupe */
+  --cream-deep:   #6b5648;   /* raised surface */
+  --ink:          #fffdf8;   /* primary text — bright */
+  --muted:        #e6d9c8;   /* secondary text — bright warm */
+  --line:         #7a6353;   /* borders */
+  --white:        #6d584a;   /* card surface */
 
   /* light tile for product images so bottles glow on the dark stage */
   --tile-light:   #f7f0e4;
@@ -1229,11 +1229,11 @@ ul, ol { list-style: none; }
 
 /* GLASSMORPHISM ------------------------------------- */
 .glass {
-  background: rgba(255,255,255,.62);
-  backdrop-filter: blur(16px) saturate(140%);
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
-  border: 1px solid rgba(255,255,255,.7);
-  box-shadow: 0 8px 30px -12px rgba(90,36,16,.28), inset 0 1px 0 rgba(255,255,255,.6);
+  background: linear-gradient(160deg, rgba(90,68,50,.55), rgba(58,42,30,.62));
+  backdrop-filter: blur(16px) saturate(130%);
+  -webkit-backdrop-filter: blur(16px) saturate(130%);
+  border: 1px solid rgba(255,235,200,.14);
+  box-shadow: 0 10px 34px -14px rgba(0,0,0,.75), inset 0 1px 0 rgba(255,240,210,.12);
 }
 
 /* 3D button */
@@ -1242,7 +1242,7 @@ ul, ol { list-style: none; }
   transform: translateY(0); transition: transform .12s, box-shadow .12s;
 }
 .btn--3d:active { transform: translateY(4px); box-shadow: 0 2px 0 #7a5714, 0 6px 14px -8px rgba(168,126,30,.5); }
-.home-shop { margin: 0 18px 16px; }
+.home-shop { display: block; margin: 0 18px 16px; width: calc(100% - 36px); text-align: center; box-sizing: border-box; }
 
 /* Order on the way (premium glass) */
 .otw { display: block; margin: 0 18px 16px; padding: 16px; border-radius: 20px; text-decoration: none; }
@@ -1440,6 +1440,49 @@ h1, h2, h3 { color: var(--ink); }
 
 /* subtle warm accent glow behind key CTAs for a premium bar feel */
 .btn--gold { box-shadow: 0 6px 20px -6px rgba(224,185,74,.5); }
+
+/* 3D DEPTH on all buttons — solid bottom edge + lift, press on tap */
+.btn--gold, .btn--brown, .btn--ghost {
+  transform: translateY(0);
+  transition: transform .12s ease, box-shadow .12s ease, background .18s ease;
+}
+.btn--gold {
+  box-shadow: 0 5px 0 #8a6414, 0 12px 22px -8px rgba(224,185,74,.55);
+}
+.btn--gold:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 #8a6414, 0 6px 14px -8px rgba(224,185,74,.5);
+}
+.btn--brown {
+  box-shadow: 0 5px 0 #3d1509, 0 12px 22px -8px rgba(0,0,0,.5);
+}
+.btn--brown:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 #3d1509, 0 6px 14px -8px rgba(0,0,0,.5);
+}
+.btn--ghost {
+  background: var(--white); color: var(--ink); border-color: var(--line);
+  box-shadow: 0 4px 0 rgba(0,0,0,.35), 0 8px 16px -8px rgba(0,0,0,.5);
+}
+.btn--ghost:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 rgba(0,0,0,.35), 0 4px 10px -8px rgba(0,0,0,.5);
+}
+/* small buttons get lighter depth so they don't look chunky */
+.btn--sm {
+  box-shadow: 0 3px 0 rgba(0,0,0,.3), 0 6px 12px -6px rgba(0,0,0,.4) !important;
+}
+.btn--sm:active { transform: translateY(2px); box-shadow: 0 1px 0 rgba(0,0,0,.3) !important; }
+
+/* home glass-card text — brighten on dark frosted panels */
+.ptile__label { color: var(--ink) !important; }
+.promo-strip__body strong { color: var(--ink) !important; }
+.promo-strip__sub, .otw__info span { color: #d8c7b2 !important; }
+.promo-strip__tag { color: var(--gold-bright) !important; }
+.otw__info strong { color: var(--ink) !important; }
+.otw__pill { color: var(--ink) !important; }
+/* tile icon plates stay light so the gold icons read */
+.ptile__icon { background: linear-gradient(145deg,#fdf6e8,#eaddc2); }
 
 /* ---------- 9. UTILITIES & RESPONSIVE ---------- */
 /* clears fixed .pd__bar so last content isn't hidden behind it */

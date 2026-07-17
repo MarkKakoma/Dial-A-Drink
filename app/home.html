@@ -24,7 +24,7 @@
           <span class="statusbar__icons"><span>📶</span><span>🔋</span></span>
         </div>
 
-        <!-- HERO: full-screen video splash then collapses to banner -->
+        <!-- HERO: full-screen splash then collapses to banner -->
         <div class="hero" id="hero">
           <div class="hero__media">
             <video class="hero__video" autoplay muted loop playsinline
@@ -118,9 +118,12 @@
     const cue = document.getElementById('scrollCue');
     let collapsed = false;
     function collapse(){ if(collapsed) return; collapsed = true; hero.classList.add('is-collapsed'); }
-    screen.addEventListener('scroll', () => { if(screen.scrollTop > 8) collapse(); }, {passive:true});
-    cue.addEventListener('click', () => { collapse(); screen.scrollTo({top:1,behavior:'smooth'}); });
-    setTimeout(collapse, 2600);
+    screen.addEventListener('scroll', () => { if(screen.scrollTop > 6) collapse(); }, {passive:true});
+    cue.addEventListener('click', collapse);
+    hero.addEventListener('click', collapse);          // tap hero anywhere to collapse
+    window.addEventListener('wheel', collapse, {passive:true, once:true});
+    window.addEventListener('touchstart', collapse, {passive:true, once:true});
+    setTimeout(collapse, 1800);                         // faster auto-collapse
   </script>
 </body>
 </html>
