@@ -126,6 +126,7 @@
   </div>
 
   <script src="products.js"></script>
+  <script src="drinkart.js"></script>
   <script>
     // sample cart — three line items (matches the "3" badge elsewhere)
     const CART = [
@@ -143,7 +144,7 @@
       subtotal += lineTotal;
       return `
         <div class="co-item">
-          <div class="co-item__img">${p.emoji}</div>
+          <div class="co-item__img">${drinkArt(p)}</div>
           <div class="co-item__body">
             <div class="co-item__name">${p.name}</div>
             <div class="co-item__size">${p.size} · ${money(p.price)}</div>
