@@ -19,105 +19,108 @@
       <div class="phone__notch"></div>
       <div class="phone__screen">
 
-        <!-- status bar -->
-        <div class="statusbar">
+        <div class="statusbar statusbar--over">
           <span>9:41</span>
           <span class="statusbar__icons"><span>📶</span><span>🔋</span></span>
         </div>
 
-        <!-- scrollable app viewport -->
-        <div class="screen home">
-
-          <!-- header -->
-          <header class="home__head">
-            <div class="home__head-top">
-              <img src="../assets/logo.png" alt="Dial A Drink" class="home__logo" />
-              <a href="account.html" class="home__avatar" aria-label="Account">T</a>
-            </div>
-            <h1 class="home__greet">Evening, Tapiwa 👋</h1>
-            <div class="home__status">
-              <span class="pill pill--ok"><span class="pill__dot"></span>Open</span>
-              <span class="muted">Delivering now · until 20:00</span>
-            </div>
-            <a href="credit.html" class="home__credit">
-              <div>
-                <span class="home__credit-label">Store credit</span>
-                <span class="home__credit-amount">$4.50</span>
-              </div>
-              <span class="home__credit-go">›</span>
-            </a>
-          </header>
-
-          <!-- active order -->
-          <a href="tracking.html" class="active-order">
-            <div class="active-order__pulse"></div>
-            <div class="active-order__body">
-              <span class="active-order__label">Order on the way</span>
-              <span class="active-order__eta">Arriving in about 12 min</span>
-            </div>
-            <span class="active-order__go">›</span>
-          </a>
-
-          <!-- primary action -->
-          <div class="pad">
-            <a href="catalogue.html" class="btn btn--gold">Browse the catalogue</a>
+        <!-- HERO: full-screen video splash then collapses to banner -->
+        <div class="hero" id="hero">
+          <div class="hero__media">
+            <video class="hero__video" autoplay muted loop playsinline
+                   poster="../assets/hero-poster.jpg">
+              <source src="../assets/hero.mp4" type="video/mp4" />
+            </video>
+            <div class="hero__scrim"></div>
+            <span class="hero__orb hero__orb--1"></span>
+            <span class="hero__orb hero__orb--2"></span>
+            <span class="hero__orb hero__orb--3"></span>
+            <span class="hero__orb hero__orb--4"></span>
           </div>
-
-          <!-- quick tiles -->
-          <div class="tiles">
-            <a href="catalogue.html" class="tile">
-              <span class="tile__icon">🍾</span>
-              <span class="tile__label">Catalogue</span>
-            </a>
-            <a href="buy-a-round.html" class="tile">
-              <span class="tile__icon">🥂</span>
-              <span class="tile__label">Buy A Round</span>
-            </a>
-            <a href="credit.html" class="tile">
-              <span class="tile__icon">💳</span>
-              <span class="tile__label">Store credit</span>
-            </a>
-            <a href="orders.html" class="tile">
-              <span class="tile__icon">🔁</span>
-              <span class="tile__label">Reorder</span>
-            </a>
+          <div class="hero__content">
+            <span class="hero__eyebrow">Good evening</span>
+            <h1 class="hero__greet">Evening, Tapiwa</h1>
+            <p class="hero__sub">Open &middot; delivering until 20:00</p>
           </div>
-
-          <!-- recent orders -->
-          <div class="home__section-row">
-            <span class="section-label" style="padding:0;">Recent orders</span>
-            <a href="orders.html" class="home__seeall">See all</a>
+          <div class="hero__scrollcue" id="scrollCue">
+            <span>Browse</span>
+            <span class="hero__chev">&#8964;</span>
           </div>
-
-          <a href="order-detail.html" class="row">
-            <div class="row__body">
-              <div class="row__title">Jameson Irish Whisky + 2 more</div>
-              <div class="row__sub">14 Jul · $58.00</div>
-            </div>
-            <div class="row__meta"><span class="pill pill--ok"><span class="pill__dot"></span>Delivered</span></div>
-          </a>
-          <a href="order-detail.html" class="row">
-            <div class="row__body">
-              <div class="row__title">Bob's Your Uncle Sauv Blanc</div>
-              <div class="row__sub">9 Jul · $12.00</div>
-            </div>
-            <div class="row__meta"><span class="pill pill--ok"><span class="pill__dot"></span>Delivered</span></div>
-          </a>
-
-          <div style="height:16px;"></div>
         </div>
 
-        <!-- bottom tab bar -->
+        <!-- SCROLLABLE CONTENT -->
+        <div class="screen home-premium" id="screen">
+
+          <a href="tracking.html" class="glass otw">
+            <div class="otw__head">
+              <span class="otw__pill"><span class="otw__dot"></span>Order on the way</span>
+              <span class="otw__eta">12 min</span>
+            </div>
+            <div class="otw__body">
+              <div class="otw__rider">&#128676;</div>
+              <div class="otw__info">
+                <strong>#DAD-2048 &middot; arriving soon</strong>
+                <span>James is on the way to you</span>
+              </div>
+              <span class="otw__go">&#8250;</span>
+            </div>
+            <div class="otw__track"><span class="otw__progress"></span></div>
+          </a>
+
+          <a href="catalogue.html" class="btn btn--gold btn--lg btn--3d home-shop">Browse the catalogue</a>
+
+          <div class="ptiles">
+            <a href="catalogue.html" class="ptile glass">
+              <span class="ptile__icon"><img src="../assets/icons/promo.svg" alt="" /></span>
+              <span class="ptile__label">Promotional<br/>Items</span>
+            </a>
+            <a href="buy-a-round.html" class="ptile glass">
+              <span class="ptile__icon"><img src="../assets/icons/round.svg" alt="" /></span>
+              <span class="ptile__label">Buy A<br/>Round</span>
+            </a>
+            <a href="orders.html" class="ptile glass">
+              <span class="ptile__icon"><img src="../assets/icons/reorder.svg" alt="" /></span>
+              <span class="ptile__label">Reorder</span>
+            </a>
+            <a href="catalogue.html" class="ptile glass">
+              <span class="ptile__icon"><img src="../assets/icons/popular.svg" alt="" /></span>
+              <span class="ptile__label">Popular</span>
+            </a>
+          </div>
+
+          <div class="promo-strip glass">
+            <div class="promo-strip__body">
+              <span class="promo-strip__tag">This weekend</span>
+              <strong>10% off sparkling &amp; champagne</strong>
+              <span class="promo-strip__sub">Add a bottle to your next round</span>
+            </div>
+            <span class="promo-strip__emoji">&#127870;</span>
+          </div>
+
+          <div style="height:20px;"></div>
+        </div>
+
         <nav class="tabbar">
-          <a href="home.html" class="is-active"><span class="ico">🏠</span>Home</a>
-          <a href="catalogue.html"><span class="ico">🍾</span>Shop</a>
-          <a href="orders.html"><span class="ico">🧾</span>Orders</a>
-          <a href="credit.html"><span class="ico">💳</span>Credit</a>
-          <a href="account.html"><span class="ico">👤</span>Account</a>
+          <a href="home.html" class="is-active"><span class="ico">&#127968;</span>Home</a>
+          <a href="catalogue.html"><span class="ico">&#127870;</span>Shop</a>
+          <a href="orders.html"><span class="ico">&#129534;</span>Orders</a>
+          <a href="credit.html"><span class="ico">&#128179;</span>Credit</a>
+          <a href="account.html"><span class="ico">&#128100;</span>Account</a>
         </nav>
 
       </div>
     </div>
   </div>
+
+  <script>
+    const hero = document.getElementById('hero');
+    const screen = document.getElementById('screen');
+    const cue = document.getElementById('scrollCue');
+    let collapsed = false;
+    function collapse(){ if(collapsed) return; collapsed = true; hero.classList.add('is-collapsed'); }
+    screen.addEventListener('scroll', () => { if(screen.scrollTop > 8) collapse(); }, {passive:true});
+    cue.addEventListener('click', () => { collapse(); screen.scrollTo({top:1,behavior:'smooth'}); });
+    setTimeout(collapse, 2600);
+  </script>
 </body>
 </html>
