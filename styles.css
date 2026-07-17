@@ -1232,7 +1232,15 @@ ul, ol { list-style: none; }
   transform: translateY(0); transition: transform .12s, box-shadow .12s;
 }
 .btn--3d:active { transform: translateY(4px); box-shadow: 0 2px 0 #7a5714, 0 6px 14px -8px rgba(168,126,30,.5); }
-.home-shop { margin: 0 18px 16px; }
+.home-shop {
+  display: block;
+  margin-left: 18px;
+  margin-right: 18px;
+  margin-bottom: 16px;
+  width: calc(100% - 36px);
+  text-align: center;
+  box-sizing: border-box;
+}
 
 /* Order on the way (premium glass) */
 .otw { display: block; margin: 0 18px 16px; padding: 16px; border-radius: 20px; text-decoration: none; }
