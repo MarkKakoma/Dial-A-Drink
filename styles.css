@@ -22,6 +22,14 @@
   --gold:         #C4972B;
   --gold-bright:  #E0B94A;
 
+  /* ---- MOODY THEME: warm mid-dark stage, premium not murky ---- */
+  /* surfaces (these drive most backgrounds) */
+  --cream:        #241c17;   /* app background — deep neutral-warm (less orange) */
+  --cream-deep:   #322820;   /* raised surface */
+  --ink:          #fbf6ee;   /* primary text — bright cream */
+  --muted:        #b8a794;   /* secondary text */
+  --line:         #4d3d30;   /* borders */
+  --white:        #302620;   /* card surface — clearly lifted from bg */
 
   /* light tile for product images so bottles glow on the dark stage */
   --tile-light:   #f7f0e4;
@@ -1362,6 +1370,29 @@ body:has(.chips) .phone__screen::before {
   .pcard { animation: none; }
 }
 
+/* ---------- 8z. DARK THEME CONTRAST OVERRIDES ---------- */
+/* Prices & money -> gold so they read on dark (were dark red/brown, invisible) */
+.pcard__price,
+.pd__name,
+.pd__bar-total strong,
+.co-item__price,
+.co-line--total span,
+.stepper__val,
+.otw__eta,
+.earn-card__amount,
+.recon__driver,
+.stat__num,
+.ord-detail__id,
+.qrow__val,
+.qrow__id,
+.aadmin-stat strong,
+.drvstat strong,
+.ahome-tile strong,
+.ahome-action strong,
+.drvhome-job__body strong,
+.ord-detail__label,
+.dline--total,
+.money { color: var(--gold-bright) !important; }
 
 /* Headings & titles that were dark brown -> bright cream */
 .appbar__title, .admin-head h1, .door h2, .pd__spec-title,
