@@ -1260,10 +1260,13 @@ ul, ol { list-style: none; }
 
 /* NEW premium tiles */
 .ptiles { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; padding: 0 18px 16px; }
-.ptile { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 14px 6px; border-radius: 18px; text-decoration: none; transition: transform .14s; }
-.ptile:active { transform: translateY(2px) scale(.98); }
-.ptile__icon { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 14px; background: linear-gradient(145deg,#fffaf0,#f3e6c8); box-shadow: 0 5px 12px -5px rgba(168,126,30,.55), inset 0 1px 0 rgba(255,255,255,.8); }
-.ptile__icon img { width: 30px; height: 30px; }
+.ptile { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 14px 6px; border-radius: 18px; text-decoration: none; transition: transform .18s cubic-bezier(.34,1.4,.5,1), box-shadow .18s ease, background .18s ease; }
+.ptile:hover { transform: translateY(-4px); box-shadow: 0 14px 28px -12px rgba(90,36,16,.4); background: rgba(255,255,255,.85); }
+.ptile:hover .ptile__icon { transform: translateY(-1px) scale(1.06); box-shadow: 0 8px 18px -6px rgba(168,126,30,.7), inset 0 1px 0 rgba(255,255,255,.9); }
+.ptile:active { transform: translateY(0) scale(.97); }
+.ptile__icon { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 14px; background: linear-gradient(145deg,#fffaf0,#f3e6c8); box-shadow: 0 5px 12px -5px rgba(168,126,30,.55), inset 0 1px 0 rgba(255,255,255,.8); transition: transform .18s cubic-bezier(.34,1.4,.5,1), box-shadow .18s ease; }
+.ptile__icon img { width: 30px; height: 30px; transition: transform .18s ease; }
+.ptile:hover .ptile__icon img { transform: scale(1.08); }
 .ptile__label { font-size: .72rem; font-weight: 600; color: var(--brown); text-align: center; line-height: 1.2; }
 
 /* promo strip */
@@ -1374,16 +1377,26 @@ body:has(.chips) .phone__screen::before {
 }
 
 /* ---------- 8z. PREMIUM EXTRAS (light theme) ---------- */
-/* 3D depth on buttons */
+/* 3D depth + glass gloss on buttons */
+.btn { position: relative; overflow: hidden; }
+/* glossy sheen overlay — top-half light highlight like glass */
+.btn--gold::before, .btn--brown::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 50%;
+  background: linear-gradient(to bottom, rgba(255,255,255,.28), rgba(255,255,255,0));
+  border-radius: inherit; pointer-events: none;
+}
 .btn--gold, .btn--brown, .btn--ghost {
   transform: translateY(0);
-  transition: transform .12s ease, box-shadow .12s ease, background .18s ease;
+  transition: transform .12s ease, box-shadow .12s ease, background .18s ease, filter .18s ease;
 }
 .btn--gold { box-shadow: 0 5px 0 #8a6414, 0 10px 20px -8px rgba(168,126,30,.45); }
+.btn--gold:hover { filter: brightness(1.05); box-shadow: 0 5px 0 #8a6414, 0 14px 28px -8px rgba(168,126,30,.6); }
 .btn--gold:active { transform: translateY(4px); box-shadow: 0 1px 0 #8a6414, 0 5px 12px -8px rgba(168,126,30,.4); }
 .btn--brown { box-shadow: 0 5px 0 #431a0b, 0 10px 20px -8px rgba(90,36,16,.4); }
+.btn--brown:hover { filter: brightness(1.08); box-shadow: 0 5px 0 #431a0b, 0 14px 28px -8px rgba(90,36,16,.55); }
 .btn--brown:active { transform: translateY(4px); box-shadow: 0 1px 0 #431a0b, 0 5px 12px -8px rgba(90,36,16,.4); }
 .btn--ghost { box-shadow: 0 4px 0 var(--line), 0 8px 16px -10px rgba(90,36,16,.25); }
+.btn--ghost:hover { box-shadow: 0 4px 0 var(--line), 0 12px 22px -10px rgba(90,36,16,.35); }
 .btn--ghost:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--line); }
 .btn--sm { box-shadow: 0 3px 0 rgba(120,90,40,.25), 0 5px 10px -6px rgba(90,36,16,.3) !important; }
 .btn--sm:active { transform: translateY(2px); box-shadow: 0 1px 0 rgba(120,90,40,.25) !important; }
