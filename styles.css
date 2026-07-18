@@ -1277,13 +1277,14 @@ ul, ol { list-style: none; }
 
 /* brand logo over the hero — cream light version reads clean on the dark scrim */
 .hero__logo {
-  height: 40px; width: auto;
-  margin-bottom: 14px;
+  display: block;
+  height: 68px; width: auto;
+  margin: 0 auto 16px;
   filter: drop-shadow(0 2px 12px rgba(0,0,0,.45));
   transition: height 1.1s cubic-bezier(.7,0,.2,1), margin-bottom 1.1s cubic-bezier(.7,0,.2,1);
 }
 .hero.is-collapsed .hero__logo {
-  height: 30px;
+  height: 34px;
   margin-bottom: 8px;
 }
 
