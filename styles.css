@@ -1394,6 +1394,41 @@ body:has(.chips) .phone__screen::before {
 .pop-intro__title { font-family: var(--font-display); font-weight: 600; font-size: 1.5rem; color: var(--brown); margin: 3px 0 4px; }
 .pop-intro__sub { font-size: .88rem; color: var(--muted); }
 
+/* promotions page hero banner */
+.promo-hero {
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; gap: 12px;
+  margin: 2px 0 16px; padding: 18px 20px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, var(--brown), var(--brown-soft) 60%, #8a3a1e);
+  box-shadow: 0 12px 30px -12px rgba(90,36,16,.6);
+}
+.promo-hero__glow { position: absolute; top: -40%; right: -10%; width: 60%; height: 180%; background: radial-gradient(circle, rgba(224,185,74,.5), transparent 70%); pointer-events: none; }
+.promo-hero__body { position: relative; flex: 1; }
+.promo-hero__eyebrow { color: var(--gold-bright); font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.promo-hero__title { font-family: var(--font-display); font-weight: 600; font-size: 1.5rem; color: #fff; margin: 3px 0 4px; }
+.promo-hero__sub { font-size: .82rem; color: rgba(255,245,235,.85); line-height: 1.35; }
+.promo-hero__badge {
+  position: relative; align-self: flex-start;
+  font-size: .72rem; font-weight: 800; letter-spacing: .08em; color: var(--brown);
+  background: linear-gradient(145deg, var(--gold-bright), var(--gold));
+  padding: 5px 11px; border-radius: 999px;
+  box-shadow: 0 4px 10px -3px rgba(224,185,74,.7), inset 0 1px 0 rgba(255,255,255,.5);
+}
+
+/* discount badge on promo cards */
+.pcard--promo { position: relative; }
+.pcard__badge {
+  position: absolute; top: 8px; left: 8px; z-index: 3;
+  font-size: .72rem; font-weight: 800; color: #fff;
+  background: linear-gradient(145deg, #d64c2e, #b4402a);
+  padding: 3px 8px; border-radius: 999px;
+  box-shadow: 0 4px 10px -3px rgba(180,64,42,.6), inset 0 1px 0 rgba(255,255,255,.3);
+}
+.pcard__pricewrap { display: flex; flex-direction: column; line-height: 1.1; }
+.pcard__was { font-size: .74rem; color: var(--muted); text-decoration: line-through; }
+
+
 /* 3D depth + glass gloss on buttons */
 .btn { position: relative; overflow: hidden; }
 /* glossy sheen overlay — top-half light highlight like glass */
