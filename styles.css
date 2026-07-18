@@ -1386,6 +1386,12 @@ body:has(.chips) .phone__screen::before {
 }
 
 /* ---------- 8z. PREMIUM EXTRAS (light theme) ---------- */
+/* popular page intro */
+.pop-intro { padding: 4px 2px 14px; text-align: center; }
+.pop-intro__eyebrow { color: var(--gold); font-size: .74rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.pop-intro__title { font-family: var(--font-display); font-weight: 600; font-size: 1.5rem; color: var(--brown); margin: 3px 0 4px; }
+.pop-intro__sub { font-size: .88rem; color: var(--muted); }
+
 /* 3D depth + glass gloss on buttons */
 .btn { position: relative; overflow: hidden; }
 /* glossy sheen overlay — top-half light highlight like glass */

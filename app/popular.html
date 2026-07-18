@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dial A Drink — Popular</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png" />
+  <link rel="icon" href="../assets/favicon.ico" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+</head>
+<body>
+  <div class="stage">
+    <div class="phone">
+      <div class="phone__notch"></div>
+      <div class="phone__screen">
+
+        <div class="statusbar">
+          <span>9:41</span>
+          <span class="statusbar__icons"><span>📶</span><span>🔋</span></span>
+        </div>
+
+        <header class="cat-head">
+          <div class="cat-head__row">
+            <a href="home.html" class="appbar__back">‹</a>
+            <span class="appbar__title">Popular</span>
+            <a href="cart.html" class="cat-head__cart">🛒<span class="cat-head__badge">3</span></a>
+          </div>
+        </header>
+
+        <div class="screen" id="screen">
+          <div class="pop-intro">
+            <span class="pop-intro__eyebrow">Trending now</span>
+            <h2 class="pop-intro__title">This week's favourites</h2>
+            <p class="pop-intro__sub">The drinks Harare is ordering most right now.</p>
+          </div>
+
+          <div class="grid" id="popGrid"></div>
+
+          <div class="section-label" style="margin-top:8px;">Make it a night — add a bite</div>
+          <div class="grid" id="addonGrid"></div>
+
+          <div style="height:20px;"></div>
+        </div>
+
+        <nav class="tabbar">
+          <a href="home.html"><span class="ico">🏠</span>Home</a>
+          <a href="catalogue.html"><span class="ico">🍾</span>Shop</a>
+          <a href="orders.html"><span class="ico">🧾</span>Orders</a>
+          <a href="credit.html"><span class="ico">💳</span>Credit</a>
+          <a href="account.html"><span class="ico">👤</span>Account</a>
+        </nav>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="products.js"></script>
+  <script src="drinkart.js"></script>
+  <script>
+    // curated popular selection — a spread across categories
+    const POPULAR_IDS = ['p001','p035','p029','p003','p012','p021'];
+    const popular = POPULAR_IDS.map(id => PRODUCTS.find(p => p.id === id)).filter(Boolean);
+    // fallback: if any id is missing, top up from a variety
+    if (popular.length < 6) {
+      const cats = ['Whisky','Beers','Liqueur','Vodka','Gin','Red Wine'];
+      cats.forEach(c => { if (popular.length < 6) { const f = PRODUCTS.find(p => p.cat===c && !popular.includes(p)); if (f) popular.push(f); } });
+    }
+
+    const addons = PRODUCTS.filter(p => p.cat === 'Add-Ons');
+
+    function card(p){
+      return `
+        <a class="pcard" href="product.html?id=${p.id}">
+          <div class="pcard__img">${drinkArt(p)}</div>
+          <div class="pcard__body">
+            <div class="pcard__name">${p.name}</div>
+            <div class="pcard__size">${p.size}</div>
+            <div class="pcard__foot">
+              <span class="pcard__price">${money(p.price)}</span>
+              <span class="pcard__add">+</span>
+            </div>
+          </div>
+        </a>`;
+    }
+
+    document.getElementById('popGrid').innerHTML = popular.map(card).join('');
+    document.getElementById('addonGrid').innerHTML = addons.map(card).join('');
+  </script>
+</body>
+</html>
