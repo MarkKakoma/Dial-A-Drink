@@ -75,6 +75,7 @@
   </div>
 
   <script src="products.js"></script>
+  <script src="drinkart.js"></script>
   <script>
     const params = new URLSearchParams(location.search);
     const id = params.get('id') || PRODUCTS[0].id;
@@ -86,7 +87,7 @@
     const variants = PRODUCTS.filter(p => baseName(p.name) === baseName(product.name) && p.cat === product.cat);
 
     function render() {
-      document.getElementById('hero').textContent = product.emoji;
+      document.getElementById('hero').innerHTML = drinkArt(product);
       document.getElementById('cat').textContent = product.cat;
       document.getElementById('name').textContent = product.name;
       document.getElementById('size').textContent = product.size;
