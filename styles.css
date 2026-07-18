@@ -265,8 +265,10 @@ ul, ol { list-style: none; }
   font-size: .64rem; font-weight: 500; color: var(--muted);
   flex: 1; padding: 4px 0;
 }
-.tabbar a .ico { font-size: 1.15rem; }
+.tabbar a .ico { width: 23px; height: 23px; display: block; transition: transform .15s ease; }
 .tabbar a.is-active { color: var(--gold); }
+.tabbar a.is-active .ico { transform: translateY(-1px); }
+.tabbar a:active .ico { transform: scale(.9); }
 
 /* generic list row */
 .row {
