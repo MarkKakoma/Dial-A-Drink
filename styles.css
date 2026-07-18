@@ -1151,6 +1151,9 @@ ul, ol { list-style: none; }
 .drvact-actions { margin-top: auto; }
 
 /* ---------- 8i. DRIVER APP — HOME / EARNINGS ---------- */
+/* ensure the earnings screen fills height so its tab bar pins to the bottom */
+.drvhome-screen { flex: 1 1 auto; min-height: 0; }
+.drvhome-screen::after { content: ""; flex: 1 1 auto; }
 .drvhome-head { flex: none; background: var(--brown); padding: 12px 18px 16px; }
 .drvhome-head__row { display: flex; align-items: center; justify-content: space-between; }
 .shift-toggle { display: flex; align-items: center; gap: 8px; }
