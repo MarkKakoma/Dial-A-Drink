@@ -91,6 +91,7 @@
   </div>
 
   <script src="products.js"></script>
+  <script src="drinkart.js"></script>
   <script>
     // a curated set of giftable picks
     const PICK_IDS = ['p001','p035','p029','p085','p013','p021'];
@@ -101,7 +102,7 @@
       picksEl.innerHTML = PICK_IDS.map(id => {
         const p = byId(id); if(!p) return '';
         return `<button class="bar-pick ${id===selected?'is-active':''}" data-id="${id}">
-          <span class="bar-pick__img">${p.emoji}</span>
+          <span class="bar-pick__img">${drinkArt(p)}</span>
           <span class="bar-pick__name">${p.name}</span>
           <span class="bar-pick__price">${money(p.price)}</span>
         </button>`;
