@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dial A Drink — Driver · Home</title>
+  <title>Dial A Drink — Driver · Earnings</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -24,27 +24,17 @@
           <span class="statusbar__icons"><span>📶</span><span>🔋</span></span>
         </div>
 
-        <!-- header with online toggle -->
-        <header class="drvhome-head">
-          <div class="drvhome-head__row">
-            <div class="drvapp-bar__id">
-              <div class="drvapp-bar__av">J</div>
-              <div>
-                <strong style="color:var(--cream);">James Moyo</strong>
-                <span style="color:rgba(251,248,240,.75);">Driver · ⭐ 4.9</span>
-              </div>
-            </div>
-            <label class="shift-toggle">
-              <span class="shift-toggle__label" id="shiftLabel">Online</span>
-              <span class="toggle is-on" id="shiftToggle" onclick="toggleShift()"><span class="toggle__knob"></span></span>
-            </label>
-          </div>
+        <!-- header -->
+        <header class="appbar">
+          <a href="home.html" class="appbar__back">‹</a>
+          <span class="appbar__title">Earnings</span>
+          <span style="width:24px;"></span>
         </header>
 
         <div class="screen">
 
           <!-- earnings card -->
-          <div class="earn-card" id="earnings">
+          <div class="earn-card">
             <div class="earn-card__top">
               <div>
                 <span class="earn-card__label">Available to withdraw</span>
@@ -68,29 +58,11 @@
             <div class="drvstat"><strong>98%</strong><span>Acceptance</span></div>
           </div>
 
-          <!-- active/next job -->
-          <div class="section-label">Current job</div>
-          <a href="active.html" class="drvhome-job">
-            <span class="drvhome-job__icon">🛵</span>
-            <div class="drvhome-job__body">
-              <strong>#DAD-2048 · on the way</strong>
-              <span>12 Samora Machel Ave · $4.20</span>
-            </div>
-            <span class="drvhome-job__go">›</span>
-          </a>
-
-          <!-- admin messaging -->
-          <div class="section-label">Operations</div>
-          <a href="#" class="drvhome-row">
-            <span class="drvhome-row__icon">💬</span>
-            <div class="drvhome-row__body"><strong>Messages from ops</strong><span>2 unread</span></div>
-            <span class="drvhome-row__badge">2</span>
-          </a>
-          <a href="tel:+263" class="drvhome-row">
-            <span class="drvhome-row__icon">📞</span>
-            <div class="drvhome-row__body"><strong>Contact operations</strong><span>+263 242 700 900</span></div>
-            <span class="drvhome-row__go">›</span>
-          </a>
+          <!-- payout history -->
+          <div class="section-label">Recent payouts</div>
+          <div class="drvrec"><span>Fri 11 Jul · EcoCash</span><strong>$142.60</strong></div>
+          <div class="drvrec"><span>Fri 4 Jul · EcoCash</span><strong>$128.00</strong></div>
+          <div class="drvrec"><span>Fri 27 Jun · Bank</span><strong>$156.40</strong></div>
 
           <!-- recent deliveries -->
           <div class="section-label">Recent deliveries</div>
@@ -125,22 +97,13 @@
 
         <!-- bottom nav -->
         <nav class="tabbar">
-          <a href="home.html" class="is-active"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"/></svg>Home</a>
+          <a href="home.html"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"/></svg>Home</a>
           <a href="job.html"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M9 17h6M18 14V9h-3M6 14l2.5-5H14l3 5"/></svg>Jobs</a>
-          <a href="earnings.html"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v9M14.3 9.3c-.5-.6-1.4-1-2.3-1-1.4 0-2.5.8-2.5 1.9s1.1 1.6 2.5 1.9 2.5.8 2.5 1.9-1.1 1.9-2.5 1.9c-.9 0-1.8-.4-2.3-1"/></svg>Earnings</a>
+          <a href="earnings.html" class="is-active"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v9M14.3 9.3c-.5-.6-1.4-1-2.3-1-1.4 0-2.5.8-2.5 1.9s1.1 1.6 2.5 1.9 2.5.8 2.5 1.9-1.1 1.9-2.5 1.9c-.9 0-1.8-.4-2.3-1"/></svg>Earnings</a>
         </nav>
 
       </div>
     </div>
   </div>
-
-  <script>
-    function toggleShift(){
-      const t = document.getElementById('shiftToggle');
-      const l = document.getElementById('shiftLabel');
-      t.classList.toggle('is-on');
-      l.textContent = t.classList.contains('is-on') ? 'Online' : 'Offline';
-    }
-  </script>
 </body>
 </html>
