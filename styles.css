@@ -1166,8 +1166,10 @@ ul, ol { list-style: none; }
 .earn-card__split div { background: rgba(255,255,255,.12); border-radius: 10px; padding: 12px; }
 .earn-card__split span { display: block; font-size: .72rem; opacity: .85; }
 .earn-card__split strong { display: block; font-family: var(--font-display); font-weight: 600; font-size: 1.3rem; }
-.earn-card .btn--gold { background: #fff; color: #1f6b3f; }
-.earn-card .btn--gold:hover { background: var(--cream); }
+.earn-card .btn--gold { background: #fff; color: #1f6b3f; box-shadow: 0 4px 0 rgba(19,70,42,.35), 0 10px 20px -8px rgba(0,0,0,.35) !important; }
+.earn-card .btn--gold::before { display: none; }
+.earn-card .btn--gold:hover { background: var(--cream); box-shadow: 0 4px 0 rgba(19,70,42,.4), 0 14px 26px -8px rgba(0,0,0,.4) !important; }
+.earn-card .btn--gold:active { transform: translateY(4px); box-shadow: 0 1px 0 rgba(19,70,42,.35) !important; }
 
 .drvstat-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; padding: 0 18px; }
 .drvstat { background: var(--white); border: 1px solid var(--line); border-radius: 12px; padding: 12px 6px; text-align: center; }
@@ -1195,11 +1197,11 @@ ul, ol { list-style: none; }
 .drvrec strong { color: var(--ok); }
 
 /* bottom sheet (withdraw) */
-.sheet { position: absolute; inset: 0; z-index: 30; display: flex; align-items: flex-end; pointer-events: none; }
+.sheet { position: absolute; inset: 0; z-index: 30; display: flex; align-items: flex-end; pointer-events: none; visibility: hidden; }
+.sheet.is-open { pointer-events: auto; visibility: visible; }
 .sheet::before { content: ""; position: absolute; inset: 0; background: rgba(42,26,18,.4); opacity: 0; transition: opacity .25s; }
-.sheet.is-open { pointer-events: auto; }
 .sheet.is-open::before { opacity: 1; }
-.sheet__panel { position: relative; width: 100%; background: var(--cream); border-radius: 24px 24px 34px 34px; padding: 12px 20px calc(20px + env(safe-area-inset-bottom)); transform: translateY(100%); transition: transform .25s ease; z-index: 2; }
+.sheet__panel { position: relative; width: 100%; max-height: 100%; overflow-y: auto; background: var(--cream); border-radius: 24px 24px 34px 34px; padding: 12px 20px calc(20px + env(safe-area-inset-bottom)); transform: translateY(100%); transition: transform .25s ease; z-index: 2; }
 .sheet.is-open .sheet__panel { transform: translateY(0); }
 .sheet__handle { width: 40px; height: 4px; border-radius: 999px; background: var(--line); margin: 0 auto 16px; }
 .sheet__title { font-family: var(--font-display); font-weight: 600; font-size: 1.3rem; color: var(--brown); }
